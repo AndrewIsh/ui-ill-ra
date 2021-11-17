@@ -1,0 +1,29 @@
+{
+  "meta.title": "Interlibrary Loans",
+
+  "submissionStatus.active": "Active",
+  "submissionStatus.inactive": "Inactive",
+  "submissionStatus.pending": "Pending",
+
+  "filterConfig.boolean.true": "Yes",
+  "filterConfig.boolean.false": "No",
+  "filterConfig.submissionStatus": "Submission status",
+
+  "search": "Search",
+  "search.keyword": "All",
+  "search.name": "Name",
+  "search.contacts": "Contacts",
+  "search.code": "Code",
+  "search.language": "Language",
+  "search.aliases": "Alias",
+  "search.erpCode": "Accounting code",
+  "search.taxId": "Tax ID",
+  "search.interfaces": "Interfaces",
+  "search.placeholder.language": "Search with language code",
+  "search.id": "ID",
+
+  "main.id":  "ID",
+  "main.title": "Title",
+  "main.partTitle": "Part title",
+  "main.publicationType": "Publication type"
+}

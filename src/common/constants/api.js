@@ -1,0 +1,1 @@
+export const SUBMISSIONS_API = 'ill-ra/submissions';
