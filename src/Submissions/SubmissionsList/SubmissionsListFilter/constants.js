@@ -8,13 +8,8 @@ import {
 
 
 export const FILTERS = {
-    ACQUISITIONS_UNIT: 'acqUnitIds',
     STATUS: 'status',
-    TAGS: 'tags',
-    ADDRESS_COUNTRY: 'addresses',
-    LANGUAGE: 'language',
-    PAYMENT_METHOD: 'paymentMethod',
-    IS_VENDOR: 'isVendor',
+    TITLE: 'title'
 };
 
 

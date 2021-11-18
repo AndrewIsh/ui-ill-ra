@@ -18,7 +18,7 @@ export const useBuildQuery = () => {
         'cql.allRecords=1',
         (query, qIndex) => {
             if (qIndex) {
-                return `(${qindex}=${query})`;
+                return `(${qIndex}=${query})`;
             }
 
             return getKeywordQuery(query);

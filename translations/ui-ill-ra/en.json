@@ -11,16 +11,8 @@
 
   "search": "Search",
   "search.keyword": "All",
-  "search.name": "Name",
-  "search.contacts": "Contacts",
-  "search.code": "Code",
-  "search.language": "Language",
-  "search.aliases": "Alias",
-  "search.erpCode": "Accounting code",
-  "search.taxId": "Tax ID",
-  "search.interfaces": "Interfaces",
-  "search.placeholder.language": "Search with language code",
   "search.id": "ID",
+  "search.title": "Title",
 
   "main.id":  "ID",
   "main.title": "Title",

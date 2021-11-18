@@ -1,5 +1,6 @@
 const indexes = [
-    'id'
+    'id',
+    'title'
 ];
 
 export const searchableIndexes = [
@@ -9,7 +10,6 @@ export const searchableIndexes = [
     },
     ...indexes.map(index => ({
         labelId: `ui-ill-ra.search.${index}`,
-        placeholderId: index === 'language' ? 'ui-ill-ra.search.placeholder.language' : undefined,
         value: index
     }))
 ];
