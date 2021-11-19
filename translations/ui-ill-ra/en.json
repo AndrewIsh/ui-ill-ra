@@ -1,10 +1,6 @@
 {
   "meta.title": "Interlibrary Loans",
 
-  "submissionStatus.active": "Active",
-  "submissionStatus.inactive": "Inactive",
-  "submissionStatus.pending": "Pending",
-
   "filterConfig.boolean.true": "Yes",
   "filterConfig.boolean.false": "No",
   "filterConfig.submissionStatus": "Submission status",
