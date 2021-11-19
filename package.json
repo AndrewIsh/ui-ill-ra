@@ -100,7 +100,8 @@
         "displayName": "ILL (Requesting Agency): View submissions",
         "subPermissions": [
           "module.ill.enabled",
-          "ill-ra.submissions.collection.get"
+          "ill-ra.submissions.collection.get",
+          "ill-ra.submission-statuses.collection.get"
         ],
         "visible": true
       }

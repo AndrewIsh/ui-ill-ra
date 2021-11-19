@@ -1,22 +1,10 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
 
-import {
-    SUBMISSION_STATUS,
-    SUBMISSION_STATUS_LABELS
-} from '../../../common/constants';
-
-
 export const FILTERS = {
     STATUS: 'status',
     TITLE: 'title'
 };
-
-
-export const STATUS_OPTIONS = Object.values(SUBMISSION_STATUS).map(status => ({
-    value: status,
-    label: SUBMISSION_STATUS_LABELS[status],
-}));
 
 export const BOOLEAN_OPTIONS = [
     {

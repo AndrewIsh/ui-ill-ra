@@ -42,7 +42,7 @@ export const useSubmissions = ({
         if (!filtersCount) {
             return { submissions: [], totalRecords: 0 };
         }
-        
+
         return ky
             .get(SUBMISSIONS_API, { searchParams: { ...defaultSearchParams, ...searchParams } })
             .json();
