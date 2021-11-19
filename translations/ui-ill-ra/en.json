@@ -12,7 +12,10 @@
   "search": "Search",
   "search.keyword": "All",
   "search.id": "ID",
-  "search.title": "Title",
+  "search.submissionMetadataBibliographicInfoTitle": "Title",
+  "search.submissionMetadataBibliographicInfoAuthor": "Author",
+  "search.submissionMetadataBibliographicInfoTitleOfComponent": "Title of component",
+  "search.submissionMetadataBibliographicInfoAuthorOfComponent": "Author of component",
 
   "main.id":  "ID",
   "main.title": "Title",

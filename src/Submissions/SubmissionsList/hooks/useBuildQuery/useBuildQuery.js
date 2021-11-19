@@ -15,9 +15,9 @@ import {
 export const useBuildQuery = () => {
   return useCallback(makeQueryBuilder(
     'cql.allRecords=1',
-    (query, qindex) => {
+    (query, qIndex) => {
       if (qIndex) {
-        return `(${qindex}=${query}*)`;
+        return `(${qIndex}=${query}*)`;
       }
 
       return getKeywordQuery(query);
