@@ -1,30 +1,29 @@
 import { useCallback } from 'react';
 
 import {
-    makeQueryBuilder
+  makeQueryBuilder
 } from '@folio/stripes-acq-components';
 
 import {
-    getKeywordQuery
+  getKeywordQuery
 } from '../../SubmissionsListSearchConfig';
-
 import {
-    customFilterMap,
-    CUSTOM_SORT_MAP
+  customFilterMap,
+  CUSTOM_SORT_MAP
 } from '../../SubmissionsListFilter/SubmissionsListFilterConfig';
 
 export const useBuildQuery = () => {
-    return useCallback(makeQueryBuilder(
-        'cql.allRecords=1',
-        (query, qIndex) => {
-            if (qIndex) {
-                return `(${qIndex}=${query})`;
-            }
+  return useCallback(makeQueryBuilder(
+    'cql.allRecords=1',
+    (query, qindex) => {
+      if (qIndex) {
+        return `(${qindex}=${query}*)`;
+      }
 
-            return getKeywordQuery(query);
-        },
-        'sortby name/sort.ascending',
-        customFilterMap,
-        CUSTOM_SORT_MAP
-    ), []);
+      return getKeywordQuery(query);
+    },
+    'sortby name/sort.ascending',
+    customFilterMap,
+    CUSTOM_SORT_MAP
+  ), []);
 };

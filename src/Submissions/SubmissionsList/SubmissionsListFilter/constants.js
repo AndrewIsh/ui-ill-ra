@@ -2,7 +2,7 @@ import React from 'react';
 import { FormattedMessage } from 'react-intl';
 
 export const FILTERS = {
-    STATUS: 'status',
+    STATUS: 'statusId',
     TITLE: 'title'
 };
 
