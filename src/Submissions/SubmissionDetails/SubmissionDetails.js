@@ -29,15 +29,10 @@ import {
   Icon,
   MenuSection,
   Pane,
-  PaneMenu,
   Row,
 } from '@folio/stripes/components';
-import { NotesSmartAccordion } from '@folio/stripes/smart-components';
 import {
   handleKeyCommand,
-  TagsBadge,
-  TagsPane,
-  useAcqRestrictions,
   useModalToggle,
 } from '@folio/stripes-acq-components';
 
@@ -48,6 +43,7 @@ import {
 } from '../../common/constants';
 
 import { SubmissionSummary } from './SubmissionSummary';
+import { CountAccordion } from '../../common/components/CountAccordion';
 
 const SubmissionDetails = ({
   onClose,
@@ -55,12 +51,13 @@ const SubmissionDetails = ({
   onDelete,
   onUpdate,
   submission,
-  statuses,
+  statuses
 }) => {
   const stripes = useStripes();
   const [isRemoveModalOpened, toggleRemoveModal] = useModalToggle();
   const initialAccordionStatus = {
-    [SUBMISSION_SECTIONS.summarySection]: true
+    [SUBMISSION_SECTIONS.summarySection]: true,
+    [SUBMISSION_SECTIONS.requestsSection]: false
   };
 
   const paneTitleRef = useRef();
@@ -171,8 +168,27 @@ const SubmissionDetails = ({
               submission={submission}
             />
           </Accordion>
+          <CountAccordion
+            id={SUBMISSION_SECTIONS.requestsSection}
+            label={SUBMISSION_SECTION_LABELS[SUBMISSION_SECTIONS.requestsSection]}
+            count={5}
+          >
+            <div>Hello</div>
+          </CountAccordion>
         </AccordionSet>
       </AccordionStatus>
+
+      {isRemoveModalOpened && (
+          <ConfirmationModal
+            id="delete-submission-confirmation"
+            confirmLabel={<FormattedMessage id="ui-ill-ra.submission.delete.confirmLabel" />}
+            heading={<FormattedMessage id="ui-ill-ra.submission.delete.heading" values={{ submissionTitle: `${'TITLE HERE'}` }} />}
+            message={<FormattedMessage id="ui-ill-ra.view.delete.message" />}
+            onCancel={toggleRemoveModal}
+            onConfirm={onDelete}
+            open
+          />
+        )}
 
     </Pane>
   </HasCommand>

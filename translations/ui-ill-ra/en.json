@@ -15,11 +15,16 @@
 
   "view.edit": "Edit submission",
   "view.delete": "Delete submission",
+  "view.delete.message": "Delete submission?",
 
   "main.id":  "ID",
   "main.title": "Title",
   "main.partTitle": "Part title",
   "main.publicationType": "Publication type",
 
-  "summary": "Summary"
+  "submission.delete.confirmLabel": "Delete",
+  "submission.delete.heading": "Delete {submissionTitle}?",
+
+  "summary": "Summary",
+  "requests": "Requests"
 }
