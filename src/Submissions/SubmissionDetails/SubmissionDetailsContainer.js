@@ -18,6 +18,7 @@ import {
 
 import SubmissionDetails from './SubmissionDetails';
 import { useSubmissions } from '../hooks/useSubmissions';
+import { useRequests } from '../hooks/useRequests';
 import { useSubmissionStatuses } from '../hooks/useSubmissionStatuses';
 
 export const SubmissionDetailsContainer = () => {
@@ -37,6 +38,10 @@ export const SubmissionDetailsContainer = () => {
     submissions: submission,
     isLoading
   } = useSubmissions({ pagination, submissionId });
+
+  const {
+    requests
+  } = useRequests({ pagination, submissionId: submissionId })
 
   const {
     statuses
@@ -113,6 +118,7 @@ export const SubmissionDetailsContainer = () => {
   return <SubmissionDetails
     statuses={statuses}
     submission={submission}
+    requests={requests}
     onClose={closePane}
     onEdit={editSubmission}
     onDelete={deleteSubmission}
