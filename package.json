@@ -50,6 +50,7 @@
     "react-intl": "^5.8.0",
     "react-redux": "^7.2.2",
     "react-router-dom": "^5.2.0",
+    "react-router-prop-types": "^1.0.4",
     "redux": "^4.0.5",
     "regenerator-runtime": "^0.13.3"
   },
@@ -101,7 +102,36 @@
         "subPermissions": [
           "module.ill.enabled",
           "ill-ra.submissions.collection.get",
-          "ill-ra.submission-statuses.collection.get"
+          "ill-ra.submission-statuses.collection.get",
+          "ill-ra.submissions.item.get",
+          "ill-ra.requests.collection.get"
+        ],
+        "visible": true
+      },
+      {
+        "permissionName": "ui-ill-ra.submission.create",
+        "displayName": "ILL (Requesting Agency): Create submissions",
+        "subPermissions": [
+          "ill-ra.submissions.item.post",
+          "ui-ill-ra.submission.view"
+        ],
+        "visible": true
+      },
+      {
+        "permissionName": "ui-ill-ra.submission.edit",
+        "displayName": "ILL (Requesting Agency): Edit submissions",
+        "subPermissions": [
+          "ill-ra.submissions.item.put",
+          "ui-ill-ra.submission.view"
+        ],
+        "visible": true
+      },
+      {
+        "permissionName": "ui-ill-ra.submission.delete",
+        "displayName": "ILL (Requesting Agency): Delete submissions",
+        "subPermissions": [
+          "ill-ra.submissions.item.delete",
+          "ui-ill-ra.submission.view"
         ],
         "visible": true
       }

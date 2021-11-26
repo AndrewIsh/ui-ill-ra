@@ -6,11 +6,11 @@ import {
 
 import {
   getKeywordQuery
-} from '../../SubmissionsListSearchConfig';
+} from '../../SubmissionsList/SubmissionsListSearchConfig';
 import {
   customFilterMap,
   CUSTOM_SORT_MAP
-} from '../../SubmissionsListFilter/SubmissionsListFilterConfig';
+} from '../../SubmissionsList/SubmissionsListFilter/SubmissionsListFilterConfig';
 
 export const useBuildQuery = () => {
   return useCallback(makeQueryBuilder(

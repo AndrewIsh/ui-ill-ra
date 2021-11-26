@@ -13,8 +13,13 @@
   "search.submissionMetadataBibliographicInfoTitleOfComponent": "Title of component",
   "search.submissionMetadataBibliographicInfoAuthorOfComponent": "Author of component",
 
+  "view.edit": "Edit submission",
+  "view.delete": "Delete submission",
+
   "main.id":  "ID",
   "main.title": "Title",
   "main.partTitle": "Part title",
-  "main.publicationType": "Publication type"
+  "main.publicationType": "Publication type",
+
+  "summary": "Summary"
 }

@@ -6,7 +6,7 @@ import {
 } from '@folio/stripes-acq-components';
 
 import SubmissionsList from './SubmissionsList';
-import { useSubmissions } from './hooks';
+import { useSubmissions } from '../hooks';
 
 const SubmissionsListContainer = () => {
     const {
@@ -17,7 +17,7 @@ const SubmissionsListContainer = () => {
     const {
         submissions,
         totalRecords,
-        isFetching
+        isLoading
     } = useSubmissions({ pagination });
 
     return (
@@ -25,7 +25,7 @@ const SubmissionsListContainer = () => {
             onNeedMoreData={changePage}
             resetData={() => { }}
             submissionsCount={totalRecords}
-            isLoading={isFetching}
+            isLoading={isLoading}
             submissions={submissions}
             refreshList={refreshPage}
             pagination={pagination}

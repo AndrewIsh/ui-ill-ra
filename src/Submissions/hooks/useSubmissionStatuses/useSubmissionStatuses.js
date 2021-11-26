@@ -2,7 +2,7 @@ import { useQuery } from 'react-query';
 
 import { useOkapiKy } from '@folio/stripes/core';
 
-import { SUBMISSIONS_STATUSES_API } from '../../../../common/constants';
+import { SUBMISSIONS_STATUSES_API } from '../../../common/constants';
 
 export const useSubmissionStatuses = () => {
   const ky = useOkapiKy();
@@ -20,6 +20,6 @@ export const useSubmissionStatuses = () => {
 
   return ({
     ...data,
-    isFetching
+    isLoading: isFetching
   });
 };

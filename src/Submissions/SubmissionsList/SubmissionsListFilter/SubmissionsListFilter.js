@@ -13,7 +13,7 @@ import {
   FILTERS
 } from './constants';
 
-import { useSubmissionStatuses } from '../hooks/useSubmissionStatuses';
+import { useSubmissionStatuses } from '../../hooks/useSubmissionStatuses';
 
 const applyFiltersAdapter = (applyFilters) => ({ name, values }) => applyFilters(name, values);
 
@@ -34,7 +34,7 @@ const SubmissionsListFilter = ({
     [applyFilters]
   );
 
-  const { isFetching, statuses } = useSubmissionStatuses();
+  const { isLoading, statuses } = useSubmissionStatuses();
 
   return (
     <AccordionSet>
