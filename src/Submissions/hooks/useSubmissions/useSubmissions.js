@@ -21,10 +21,11 @@ export const useSubmissions = ({
   pagination,
   searchParams = {},
   options = {},
+  key,
   submissionId
 }) => {
   const ky = useOkapiKy();
-  const [namespace] = useNamespace({ key: 'submissions-list' });
+  const [namespace] = useNamespace({ key });
 
   const { search } = useLocation();
   const buildQuery = useBuildQuery();

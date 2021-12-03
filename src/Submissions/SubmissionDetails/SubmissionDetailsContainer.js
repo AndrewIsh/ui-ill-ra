@@ -30,14 +30,17 @@ export const SubmissionDetailsContainer = () => {
 
   const submissionId = params.id;
 
+  const key = 'submission-details';
+
   const {
     pagination,
   } = usePagination({ limit: RESULT_COUNT_INCREMENT, offset: 0 });
 
-  const {
-    submissions: submission,
-    isLoading
-  } = useSubmissions({ pagination, submissionId });
+  const submission = useSubmissions({
+    pagination,
+    submissionId,
+    key
+  });
 
   const {
     requests
@@ -106,7 +109,7 @@ export const SubmissionDetailsContainer = () => {
     [intl, showCallout, submissionId],
   );
 
-  if (isLoading) {
+  if (submission.isLoading) {
     return (
       <LoadingPane
         id="pane-submission-details"

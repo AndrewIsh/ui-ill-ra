@@ -14,11 +14,17 @@ const SubmissionsListContainer = () => {
         changePage,
         refreshPage
     } = usePagination({ limit: RESULT_COUNT_INCREMENT, offset: 0 });
+
+  const key = 'submissions-list';
+
     const {
         submissions,
         totalRecords,
         isLoading
-    } = useSubmissions({ pagination });
+    } = useSubmissions({
+      pagination,
+      key
+    });
 
     return (
         <SubmissionsList

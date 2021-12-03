@@ -43,6 +43,7 @@ import {
 } from '../../common/constants';
 
 import { SubmissionSummary } from './SubmissionSummary';
+import { SubmissionLocationsContainer } from './SubmissionLocations';
 import { CountAccordion } from '../../common/components/CountAccordion';
 
 const SubmissionDetails = ({
@@ -66,7 +67,6 @@ const SubmissionDetails = ({
   const history = useHistory();
   const accordionStatusRef = useRef();
   const isDetailsPaneInFocus = location.state?.isDetailsPaneInFocus;
-
 
   useEffect(() => {
     if (isDetailsPaneInFocus) paneTitleRef.current.focus();
@@ -167,8 +167,17 @@ const SubmissionDetails = ({
           >
             <SubmissionSummary
               submission={submission}
+              statuses={statuses}
             />
           </Accordion>
+          <Accordion
+              id={SUBMISSION_SECTIONS.locationSection}
+              label={SUBMISSION_SECTION_LABELS[SUBMISSION_SECTIONS.locationSection]}
+            >
+              <SubmissionLocationsContainer
+                locationIds={[submission.submissionLocation]}
+              />
+            </Accordion>
           <CountAccordion
             id={SUBMISSION_SECTIONS.requestsSection}
             label={SUBMISSION_SECTION_LABELS[SUBMISSION_SECTIONS.requestsSection]}
