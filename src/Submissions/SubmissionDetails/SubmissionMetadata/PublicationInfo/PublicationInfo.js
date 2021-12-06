@@ -24,7 +24,7 @@ const layout = [
 ];
 
 const getCol = ({ col, pubInfo }) => {
-  return <Col xs={4}>
+  return <Col key={col} xs={4}>
     <KeyValue
       data-testid={`pubInfo-${col}`}
       label={<FormattedMessage id={`ui-ill-ra.pubInfo.${col}`} />}
@@ -33,7 +33,7 @@ const getCol = ({ col, pubInfo }) => {
   </Col>;
 };
 
-const getRows = (pubInfo) => layout.map(row => <Row>
+const getRows = (pubInfo) => layout.map((row, index) => <Row key={index}>
   {row.map(col => getCol({ col, pubInfo }))}
 </Row>
 );

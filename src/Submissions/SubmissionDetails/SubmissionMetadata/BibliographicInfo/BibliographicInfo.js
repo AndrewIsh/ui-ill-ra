@@ -32,11 +32,11 @@ const layout = [
 // by a colon
 const getArrayVals = (arr) => {
   if (arr.length === 0) return;
-  return arr.map(obj => <span>{Object.values(obj).join(': ')}</span>);
+  return arr.map((obj, index) => <span key={index}>{Object.values(obj).join(': ')}</span>);
 };
 
 const getCol = ({ col, bibInfo }) => {
-  return <Col xs={4}>
+  return <Col key={col} xs={4}>
     <KeyValue
       data-testid={`bibInfo-${col}`}
       label={<FormattedMessage id={`ui-ill-ra.bibInfo.${col}`} />}
@@ -45,7 +45,7 @@ const getCol = ({ col, bibInfo }) => {
   </Col>;
 };
 
-const getRows = (bibInfo) => layout.map(row => <Row>
+const getRows = (bibInfo) => layout.map((row, index) => <Row key={index}>
   {row.map(col => getCol({ col, bibInfo }))}
 </Row>
 );
