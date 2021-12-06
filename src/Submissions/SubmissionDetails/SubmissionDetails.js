@@ -43,6 +43,7 @@ import {
 } from '../../common/constants';
 
 import { SubmissionSummary } from './SubmissionSummary';
+import { SubmissionMetadata } from './SubmissionMetadata';
 import { SubmissionLocationsContainer } from './SubmissionLocations';
 import { CountAccordion } from '../../common/components/CountAccordion';
 
@@ -171,13 +172,21 @@ const SubmissionDetails = ({
             />
           </Accordion>
           <Accordion
-              id={SUBMISSION_SECTIONS.locationSection}
-              label={SUBMISSION_SECTION_LABELS[SUBMISSION_SECTIONS.locationSection]}
-            >
-              <SubmissionLocationsContainer
-                locationIds={[submission.submissionLocation]}
-              />
-            </Accordion>
+            id={SUBMISSION_SECTIONS.locationSection}
+            label={SUBMISSION_SECTION_LABELS[SUBMISSION_SECTIONS.locationSection]}
+          >
+            <SubmissionLocationsContainer
+              locationIds={[submission.submissionLocation]}
+            />
+          </Accordion>
+          <Accordion
+            id={SUBMISSION_SECTIONS.metadataSection}
+            label={SUBMISSION_SECTION_LABELS[SUBMISSION_SECTIONS.metadataSection]}
+          >
+            <SubmissionMetadata
+              submission={submission}
+            />
+          </Accordion>
           <CountAccordion
             id={SUBMISSION_SECTIONS.requestsSection}
             label={SUBMISSION_SECTION_LABELS[SUBMISSION_SECTIONS.requestsSection]}

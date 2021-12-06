@@ -26,5 +26,28 @@
   "submission.delete.heading": "Delete {submissionTitle}?",
 
   "summary": "Summary",
-  "requests": "Requests"
+  "summary.status": "Submission status",
+  "summary.user": "Submitted by",
+  "location": "Location",
+  "metadata": "Metadata",
+  "requests": "Requests",
+  "bibinfo": "Bibliographic information",
+
+  "bibInfo.SupplierUniqueRecordId": "Supplier ID",
+  "bibInfo.Title": "Title",
+  "bibInfo.Author": "Author",
+  "bibInfo.Subtitle": "Subtitle",
+  "bibInfo.SeriesTitle": "Title of series",
+  "bibInfo.Edition": "Edition number",
+  "bibInfo.TitleOfComponent": "Component title",
+  "bibInfo.AuthorOfComponent": "Component author",
+  "bibInfo.Volume": "Volume number",
+  "bibInfo.Issue": "Issue number",
+  "bibInfo.PagesRequested": "Page from and page to",
+  "bibInfo.EstimatedNoPages": "Expected number of pages",
+  "bibInfo.BibliographicItemId": "Bibliographic item ID",
+  "bibInfo.Sponsor": "Publication sponsor",
+  "bibInfo.InformationSource": "Bibliographic information source",
+  "bibInfo.BibliographicRecordId": "Bibliographic record ID"
+
 }
