@@ -44,6 +44,7 @@ import {
 
 import { SubmissionSummary } from './SubmissionSummary';
 import { SubmissionMetadata } from './SubmissionMetadata';
+import { SubmissionRequests } from './SubmissionRequests';
 import { SubmissionLocationsContainer } from './SubmissionLocations';
 import { CountAccordion } from '../../common/components/CountAccordion';
 
@@ -193,7 +194,7 @@ const SubmissionDetails = ({
             label={SUBMISSION_SECTION_LABELS[SUBMISSION_SECTIONS.requestsSection]}
             count={requestsCount}
           >
-            <div>Hello</div>
+            <SubmissionRequests requests={requests} />
           </CountAccordion>
         </AccordionSet>
       </AccordionStatus>
