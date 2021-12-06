@@ -32,6 +32,7 @@
   "metadata": "Metadata",
   "requests": "Requests",
   "bibinfo": "Bibliographic information",
+  "pubinfo": "Publication information",
 
   "bibInfo.SupplierUniqueRecordId": "Supplier ID",
   "bibInfo.Title": "Title",
@@ -48,6 +49,10 @@
   "bibInfo.BibliographicItemId": "Bibliographic item ID",
   "bibInfo.Sponsor": "Publication sponsor",
   "bibInfo.InformationSource": "Bibliographic information source",
-  "bibInfo.BibliographicRecordId": "Bibliographic record ID"
+  "bibInfo.BibliographicRecordId": "Bibliographic record ID",
 
+  "pubInfo.Publisher": "Publisher",
+  "pubInfo.PublicationType": "Publication type",
+  "pubInfo.PublicationDate": "Publication date",
+  "pubInfo.PlaceOfPublication": "Place of publication"
 }

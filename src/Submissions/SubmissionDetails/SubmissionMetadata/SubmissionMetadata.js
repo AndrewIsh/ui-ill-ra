@@ -7,6 +7,7 @@ import {
 } from '@folio/stripes/components';
 
 import { BibliographicInfo } from './BibliographicInfo';
+import { PublicationInfo } from './PublicationInfo';
 
 const SubmissionMetadata = ({
   submission
@@ -19,6 +20,11 @@ const SubmissionMetadata = ({
     <Row>
       <Col xs={12}>
         <BibliographicInfo bibInfo={metadata.BibliographicInfo} />
+      </Col>
+    </Row>
+    <Row>
+      <Col xs={12}>
+        <PublicationInfo pubInfo={metadata.PublicationInfo} />
       </Col>
     </Row>
   </>;
