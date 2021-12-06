@@ -43,7 +43,8 @@ export const SubmissionDetailsContainer = () => {
   });
 
   const {
-    requests
+    requests,
+    totalRecords
   } = useRequests({ pagination, submissionId: submissionId })
 
   const {
@@ -122,6 +123,7 @@ export const SubmissionDetailsContainer = () => {
     statuses={statuses}
     submission={submission}
     requests={requests}
+    requestsCount={totalRecords}
     onClose={closePane}
     onEdit={editSubmission}
     onDelete={deleteSubmission}

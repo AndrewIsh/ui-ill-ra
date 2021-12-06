@@ -54,6 +54,7 @@ const SubmissionDetails = ({
   onUpdate,
   submission,
   requests,
+  requestsCount,
   statuses
 }) => {
   const stripes = useStripes();
@@ -190,7 +191,7 @@ const SubmissionDetails = ({
           <CountAccordion
             id={SUBMISSION_SECTIONS.requestsSection}
             label={SUBMISSION_SECTION_LABELS[SUBMISSION_SECTIONS.requestsSection]}
-            count={requests.length}
+            count={requestsCount}
           >
             <div>Hello</div>
           </CountAccordion>
@@ -220,6 +221,7 @@ SubmissionDetails.propTypes = {
   onUpdate: PropTypes.func.isRequired,
   submission: PropTypes.object.isRequired,
   requests: PropTypes.arrayOf(PropTypes.object),
+  requestsCount: PropTypes.number,
   statuses: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.string,
     value: PropTypes.string,
