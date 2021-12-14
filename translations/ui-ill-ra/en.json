@@ -54,5 +54,8 @@
   "pubInfo.Publisher": "Publisher",
   "pubInfo.PublicationType": "Publication type",
   "pubInfo.PublicationDate": "Publication date",
-  "pubInfo.PlaceOfPublication": "Place of publication"
+  "pubInfo.PlaceOfPublication": "Place of publication",
+
+  "request.supplier.name": "Supplier",
+  "request.supplier.requestId": "Supplier request ID"
 }
