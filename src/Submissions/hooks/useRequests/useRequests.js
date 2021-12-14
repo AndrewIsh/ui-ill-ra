@@ -52,7 +52,7 @@ export const useRequests = ({
     endpoint = REQUESTS_API;
   }
 
-  const queryKey = [namespace, pagination.timestamp, pagination.limit, pagination.offset];
+  const queryKey = [namespace, endpoint, query, pagination.timestamp, pagination.limit, pagination.offset];
   const queryFn = () => {
     if (!filtersCount) {
       return { requests: [], totalRecords: 0 };
