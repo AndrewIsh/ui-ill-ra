@@ -38,8 +38,8 @@ const getArrayVals = (arr) => {
 const getCol = ({ col, bibInfo }) => {
   return <Col key={col} xs={4}>
     <KeyValue
-      data-testid={`bibInfo-${col}`}
-      label={<FormattedMessage id={`ui-ill-ra.bibInfo.${col}`} />}
+      data-testid={`submission-metadata-bibInfo-${col}`}
+      label={<FormattedMessage id={`ui-ill-ra.submission.metadata.bibInfo.${col}`} />}
       value={Array.isArray(bibInfo[col]) ? getArrayVals(bibInfo[col]) : bibInfo[col]}
     />
   </Col>;

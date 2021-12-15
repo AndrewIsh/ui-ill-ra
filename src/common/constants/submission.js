@@ -10,10 +10,10 @@ export const SUBMISSION_SECTIONS = {
 };
 
 export const SUBMISSION_SECTION_LABELS = {
-  [SUBMISSION_SECTIONS.summarySection]: <FormattedMessage id="ui-ill-ra.summary" />,
-  [SUBMISSION_SECTIONS.locationSection]: <FormattedMessage id="ui-ill-ra.location" />,
-  [SUBMISSION_SECTIONS.metadataSection]: <FormattedMessage id="ui-ill-ra.metadata" />,
-  [SUBMISSION_SECTIONS.requestsSection]: <FormattedMessage id="ui-ill-ra.requests" />,
-  [SUBMISSION_SECTIONS.bibInfoSection]: <FormattedMessage id="ui-ill-ra.bibinfo" />,
-  [SUBMISSION_SECTIONS.pubInfoSection]: <FormattedMessage id="ui-ill-ra.pubinfo" />
+  [SUBMISSION_SECTIONS.summarySection]: <FormattedMessage id="ui-ill-ra.submission.heading.summary" />,
+  [SUBMISSION_SECTIONS.locationSection]: <FormattedMessage id="ui-ill-ra.submission.heading.location" />,
+  [SUBMISSION_SECTIONS.metadataSection]: <FormattedMessage id="ui-ill-ra.submission.heading.metadata" />,
+  [SUBMISSION_SECTIONS.requestsSection]: <FormattedMessage id="ui-ill-ra.submission.heading.requests" />,
+  [SUBMISSION_SECTIONS.bibInfoSection]: <FormattedMessage id="ui-ill-ra.submission.heading.bibinfo" />,
+  [SUBMISSION_SECTIONS.pubInfoSection]: <FormattedMessage id="ui-ill-ra.submission.heading.pubinfo" />
 };

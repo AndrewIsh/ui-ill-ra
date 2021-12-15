@@ -26,8 +26,8 @@ const layout = [
 const getCol = ({ col, pubInfo }) => {
   return <Col key={col} xs={4}>
     <KeyValue
-      data-testid={`pubInfo-${col}`}
-      label={<FormattedMessage id={`ui-ill-ra.pubInfo.${col}`} />}
+      data-testid={`submission-metadata-pubInfo-${col}`}
+      label={<FormattedMessage id={`ui-ill-ra.submission.metadata.pubInfo.${col}`} />}
       value={pubInfo[col]}
     />
   </Col>;

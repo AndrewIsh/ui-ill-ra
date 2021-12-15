@@ -35,14 +35,14 @@ const RequestSummary = ({ request }) => {
       <Col xs={6}>
         <KeyValue
           data-testid="connector"
-          label={<FormattedMessage id="ui-ill-ra.request.supplier.name" />}
+          label={<FormattedMessage id="ui-ill-ra.submission.requests.request.supplier.name" />}
           value={requestMetadata.connector}
         />
       </Col>
       <Col xs={6}>
         <KeyValue
           data-testid="connector"
-          label={<FormattedMessage id="ui-ill-ra.request.supplier.requestId" />}
+          label={<FormattedMessage id="ui-ill-ra.submission.requests.request.supplierRequestId" />}
           value={requestMetadata.Header?.SupplyingAgencyRequestId}
         />
       </Col>

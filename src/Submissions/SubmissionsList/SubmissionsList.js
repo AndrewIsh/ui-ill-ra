@@ -44,10 +44,10 @@ const resultsPaneTitle = <FormattedMessage id="ui-ill-ra.meta.title" />;
 const visibleColumns = ['subId', 'title', 'partTitle', 'publicationType'];
 const sortableFields = ['subId', 'title', 'partTitle', 'publicationType'];
 const columnMapping = {
-  subId: <FormattedMessage id="ui-ill-ra.main.id" />,
-  title: <FormattedMessage id="ui-ill-ra.main.title" />,
-  partTitle: <FormattedMessage id="ui-ill-ra.main.partTitle" />,
-  publicationType: <FormattedMessage id="ui-ill-ra.main.publicationType" />
+  subId: <FormattedMessage id="ui-ill-ra.submissionList.id" />,
+  title: <FormattedMessage id="ui-ill-ra.submissionList.title" />,
+  partTitle: <FormattedMessage id="ui-ill-ra.submissionList.partTitle" />,
+  publicationType: <FormattedMessage id="ui-ill-ra.submissionList.publicationType" />
 };
 const resultsFormatter = {
   subId: ({ id }) => id,

@@ -45,7 +45,7 @@ const SubmissionSummary = ({
         {status && (
           <KeyValue
             data-testid="name"
-            label={<FormattedMessage id="ui-ill-ra.summary.status" />}
+            label={<FormattedMessage id="ui-ill-ra.submission.summary.status" />}
             value={status.name}
           />
         )}
@@ -54,7 +54,7 @@ const SubmissionSummary = ({
         {submission.userId && (
           <KeyValue
             data-testid="name"
-            label={<FormattedMessage id="ui-ill-ra.summary.user" />}>
+            label={<FormattedMessage id="ui-ill-ra.submission.summary.user" />}>
             <ConnectedUserName id={submission.userId} resources={{ user: usersResource }} />
           </KeyValue>
         )}
