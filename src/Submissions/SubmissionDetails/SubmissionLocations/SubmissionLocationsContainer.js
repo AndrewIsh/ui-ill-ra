@@ -29,7 +29,7 @@ const SubmissionLocationsContainer = ({ mutator, locationIds }) => {
         .finally(() => setIsLoading(false));
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [locationIds],
+    []
   );
 
   if (isLoading) {

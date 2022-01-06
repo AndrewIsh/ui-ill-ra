@@ -69,4 +69,8 @@ BibliographicInfo.propTypes = {
   bibInfo: PropTypes.object.isRequired
 };
 
+BibliographicInfo.defaultProps = {
+  bibInfo: {}
+};
+
 export default BibliographicInfo;

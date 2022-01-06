@@ -8,6 +8,8 @@ import {
 } from '@folio/stripes/components';
 import { IfPermission } from '@folio/stripes/core';
 
+import { SUBMISSION_CREATE_ROUTE  } from '../../common/constants';
+
 const SubmissionsListLastMenu = () => {
   const { search } = useLocation();
 
@@ -20,7 +22,7 @@ const SubmissionsListLastMenu = () => {
               id="clickable-newsubmission"
               aria-label={ariaLabel}
               to={{
-                pathname: '/submissions/create',
+                pathname: SUBMISSION_CREATE_ROUTE,
                 search,
               }}
               buttonStyle="primary"

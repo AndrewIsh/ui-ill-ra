@@ -14,7 +14,7 @@ const SubmissionMetadata = ({
 }) => {
   const metadata = submission.submissionMetadata;
 
-  if (!metadata) return;
+  if (!metadata) return null;
 
   return <>
     <Row>

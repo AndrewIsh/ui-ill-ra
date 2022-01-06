@@ -24,6 +24,7 @@
 
   "submission.delete.confirmLabel": "Delete",
   "submission.delete.heading": "Delete {submissionTitle}?",
+  "submission.delete.success": "Deleted submission",
 
   "submission.heading.summary": "Summary",
   "submission.heading.location": "Location",
@@ -34,6 +35,8 @@
 
   "submission.summary.status": "Submission status",
   "submission.summary.user": "Submitted by",
+
+  "submission.metadata.location": "Submission location",
 
   "submission.metadata.bibInfo.SupplierUniqueRecordId": "Supplier ID",
   "submission.metadata.bibInfo.Title": "Title",
@@ -57,6 +60,33 @@
   "submission.metadata.pubInfo.PublicationDate": "Publication date",
   "submission.metadata.pubInfo.PlaceOfPublication": "Place of publication",
 
+  "submission.metadata.pubInfo.PublicationType.ArchiveMaterial": "Archive material",
+  "submission.metadata.pubInfo.PublicationType.Article": "Article",
+  "submission.metadata.pubInfo.PublicationType.AudioBook": "Audio book",
+  "submission.metadata.pubInfo.PublicationType.Book": "Book",
+  "submission.metadata.pubInfo.PublicationType.Chapter": "Chapter",
+  "submission.metadata.pubInfo.PublicationType.ConferenceProc": "Conference proceedings",
+  "submission.metadata.pubInfo.PublicationType.Game": "Game",
+  "submission.metadata.pubInfo.PublicationType.GovernmentPubl": "Government publication",
+  "submission.metadata.pubInfo.PublicationType.Image": "Image",
+  "submission.metadata.pubInfo.PublicationType.Journal": "Journal",
+  "submission.metadata.pubInfo.PublicationType.Manuscript": "Manuscript",
+  "submission.metadata.pubInfo.PublicationType.Map": "Map",
+  "submission.metadata.pubInfo.PublicationType.Movie": "Movie",
+  "submission.metadata.pubInfo.PublicationType.MusicRecording": "Music recording",
+  "submission.metadata.pubInfo.PublicationType.MusicScore": "Music score",
+  "submission.metadata.pubInfo.PublicationType.Newspaper": "Newspaper",
+  "submission.metadata.pubInfo.PublicationType.Patent": "Patent",
+  "submission.metadata.pubInfo.PublicationType.Report": "Report",
+  "submission.metadata.pubInfo.PublicationType.SoundRecording": "Sound recording",
+  "submission.metadata.pubInfo.PublicationType.Thesis": "Thesis",
+
   "submission.requests.request.supplier.name": "Supplier",
-  "submission.requests.request.supplierRequestId": "Supplier request ID"
+  "submission.requests.request.supplierRequestId": "Supplier request ID",
+
+  "submission.create.title": "Create submission",
+
+  "save.error.genericError": "Unable to save",
+
+  "button.saveAndClose": "Save & close"
 }

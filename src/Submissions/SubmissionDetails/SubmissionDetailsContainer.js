@@ -7,8 +7,6 @@ import {
   useParams
 } from 'react-router-dom';
 
-import { useIntl } from 'react-intl';
-
 import {
   RESULT_COUNT_INCREMENT,
   usePagination,
@@ -16,16 +14,24 @@ import {
   useShowCallout
 } from '@folio/stripes-acq-components';
 
+import { stripesConnect } from '@folio/stripes/core';
+
 import SubmissionDetails from './SubmissionDetails';
 import { useSubmissions } from '../hooks/useSubmissions';
 import { useRequests } from '../hooks/useRequests';
 import { useSubmissionStatuses } from '../hooks/useSubmissionStatuses';
+import { submissionResourceByUrl } from '../../common/resources';
+import {
+  SUBMISSIONS_ROUTE
+} from '../../common/constants';
 
-export const SubmissionDetailsContainer = () => {
+export const SubmissionDetailsContainer = ({
+  mutator,
+  refreshList
+}) => {
   const history = useHistory();
   const location = useLocation();
   const params = useParams();
-  const intl = useIntl();
   const showCallout = useShowCallout();
 
   const submissionId = params.id;
@@ -36,11 +42,13 @@ export const SubmissionDetailsContainer = () => {
     pagination,
   } = usePagination({ limit: RESULT_COUNT_INCREMENT, offset: 0 });
 
-  const submission = useSubmissions({
+  const { submissions, isLoading } = useSubmissions({
     pagination,
     submissionId,
     key
   });
+
+  const submission = submissions ? submissions[0] : {};
 
   const {
     requests,
@@ -55,7 +63,7 @@ export const SubmissionDetailsContainer = () => {
   const closePane = useCallback(
     () => {
       history.push({
-        pathname: '/illra/submissions',
+        pathname: SUBMISSIONS_ROUTE,
         search: location.search,
       });
     },
@@ -66,7 +74,7 @@ export const SubmissionDetailsContainer = () => {
   const editSubmission = useCallback(
     () => {
       history.push({
-        pathname: `/submissions/${submissionId}/edit`,
+        pathname: `${SUBMISSIONS_ROUTE}/${submissionId}/edit`,
         search: location.search,
       });
     },
@@ -76,41 +84,23 @@ export const SubmissionDetailsContainer = () => {
 
   const deleteSubmission = useCallback(
     () => {
-      console.log('DELETE');
-      /*
-      mutator.organizationDetailsOrg.DELETE({ id: organization.id }, { silent: true }).then(() => {
+      mutator.submissionDetails.DELETE({ id: submission.id }, { silent: true }).then(() => {
         showCallout({
-          messageId: 'ui-organizations.organization.delete.success',
-          type: 'success',
-          values: { organizationName: organization.name },
+          messageId: 'ui-ill-ra.submission.delete.success',
+          type: 'success'
         });
         refreshList();
         history.replace({
-          pathname: '/organizations',
+          pathname: SUBMISSIONS_ROUTE,
           search: location.search,
         });
       });
-      */
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [submissionId, showCallout, history, location.search],
   );
 
-  const updateSubmission = useCallback(
-    (data) => {
-      console.log('UPDATE');
-      /*
-      mutator.organizationDetailsOrg.PUT(data)
-        .then(() => mutator.organizationDetailsOrg.GET())
-        .then(setOrganization)
-        .catch((e) => handleSaveErrorResponse(intl, showCallout, e));
-      */
-    },
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    [intl, showCallout, submissionId],
-  );
-
-  if (submission.isLoading) {
+  if (isLoading) {
     return (
       <LoadingPane
         id="pane-submission-details"
@@ -127,8 +117,14 @@ export const SubmissionDetailsContainer = () => {
     onClose={closePane}
     onEdit={editSubmission}
     onDelete={deleteSubmission}
-    onUpdate={updateSubmission}
   />;
 };
 
-export default SubmissionDetailsContainer;
+SubmissionDetailsContainer.manifest = Object.freeze({
+  submissionDetails: {
+    ...submissionResourceByUrl,
+    accumulate: true,
+  }
+});
+
+export default stripesConnect(SubmissionDetailsContainer);

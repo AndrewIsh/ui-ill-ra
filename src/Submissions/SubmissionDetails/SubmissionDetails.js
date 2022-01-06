@@ -38,8 +38,7 @@ import {
 
 import {
   SUBMISSION_SECTIONS,
-  SUBMISSION_SECTION_LABELS,
-  SUBMISSIONS_ROUTE
+  SUBMISSION_SECTION_LABELS
 } from '../../common/constants';
 
 import { SubmissionSummary } from './SubmissionSummary';
@@ -52,7 +51,6 @@ const SubmissionDetails = ({
   onClose,
   onEdit,
   onDelete,
-  onUpdate,
   submission,
   requests,
   requestsCount,
@@ -120,7 +118,7 @@ const SubmissionDetails = ({
       name: 'new',
       handler: handleKeyCommand(() => {
         if (stripes.hasPerm('ui-ill-ra.submissions.create')) {
-          history.push(`${SUBMISSIONS_ROUTE}/create`);
+          history.push(`${SUBMISSION_CREATE_ROUTE}`);
         }
       }),
     },
@@ -219,7 +217,6 @@ SubmissionDetails.propTypes = {
   onClose: PropTypes.func.isRequired,
   onEdit: PropTypes.func.isRequired,
   onDelete: PropTypes.func.isRequired,
-  onUpdate: PropTypes.func.isRequired,
   submission: PropTypes.object.isRequired,
   requests: PropTypes.arrayOf(PropTypes.object),
   requestsCount: PropTypes.number,

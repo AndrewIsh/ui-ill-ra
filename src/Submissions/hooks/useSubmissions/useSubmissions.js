@@ -39,9 +39,14 @@ export const useSubmissions = ({
     offset: pagination.offset
   };
 
-  const endpoint = submissionId ? `${SUBMISSIONS_API}/${submissionId}` : SUBMISSIONS_API;
+  const endpoint = submissionId ? `${SUBMISSIONS_API}/${submissionId}` : SUBMISSIONS_API
 
+  // Form our query key, we may need to append the submission ID to it
   const queryKey = [namespace, pagination.timestamp, pagination.limit, pagination.offset];
+  if (submissionId) {
+    queryKey.push(submissionId);
+  }
+
   const queryFn = () => {
     if (!filtersCount) {
       return { submissions: [], totalRecords: 0 };
@@ -64,9 +69,20 @@ export const useSubmissions = ({
       ...options
     }
   );
-  return ({
-    ...data,
+
+  // Although the API will return a single submission object when requested, we need to
+  // provide a consistent shaped object, with the distinct submissions array
+  let toReturn = {
     isLoading: isFetching
-  });
+  };
+  if (submissionId) {
+    toReturn.submissions = [data];
+  } else {
+    toReturn = {
+      ...toReturn,
+      ...data
+    };
+  }
+  return toReturn;
 };
 

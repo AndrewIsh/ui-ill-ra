@@ -57,4 +57,8 @@ PublicationInfo.propTypes = {
   pubInfo: PropTypes.object.isRequired
 };
 
+PublicationInfo.defaultProps = {
+  pubInfo: {}
+};
+
 export default PublicationInfo;

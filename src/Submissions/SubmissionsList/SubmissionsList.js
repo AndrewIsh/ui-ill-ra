@@ -31,7 +31,7 @@ import {
 
 import {
   SUBMISSIONS_ROUTE,
-  VIEW_SUB_DETAILS,
+  SUBMISSION_VIEW_ROUTE
 } from '../../common/constants';
 import { SubmissionDetailsContainer } from '../SubmissionDetails';
 import SubmissionsListFilter from './SubmissionsListFilter';
@@ -91,7 +91,7 @@ const SubmissionsList = ({
   const openSubmissionDetails = useCallback(
     (e, meta) => {
       history.push({
-        pathname: `${VIEW_SUB_DETAILS}${meta.id}`,
+        pathname: `${SUBMISSION_VIEW_ROUTE}${meta.id}`,
         search: location.search,
         state: { isDetailsPaneInFocus: true },
       });
@@ -214,7 +214,7 @@ const SubmissionsList = ({
         </ResultsPane>
 
         <Route
-          path={`${VIEW_SUB_DETAILS}:id`}
+          path={`${SUBMISSION_VIEW_ROUTE}:id`}
           render={props => (
             <SubmissionDetailsContainer
               {...props}
