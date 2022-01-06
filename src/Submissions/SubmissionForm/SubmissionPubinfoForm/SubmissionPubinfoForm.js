@@ -2,7 +2,7 @@ import React from 'react';
 
 import { FormattedMessage } from 'react-intl';
 
-import { Field } from 'react-final-form'
+import { Field } from 'react-final-form';
 
 import {
   Col,

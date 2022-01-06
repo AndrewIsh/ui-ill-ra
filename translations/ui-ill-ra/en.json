@@ -27,6 +27,7 @@
   "submission.delete.success": "Deleted submission",
 
   "submission.heading.summary": "Summary",
+  "submission.heading.status": "Status",
   "submission.heading.location": "Location",
   "submission.heading.metadata": "Metadata",
   "submission.heading.requests": "Requests",

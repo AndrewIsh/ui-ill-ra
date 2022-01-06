@@ -30,6 +30,7 @@ import { MAP_FIELD_ACCORDION } from '../../common/constants';
 import { SubmissionBibinfoForm } from './SubmissionBibinfoForm';
 import { SubmissionPubinfoForm } from './SubmissionPubinfoForm';
 import { SubmissionLocationForm } from './SubmissionLocationForm';
+import { SubmissionStatus } from './SubmissionStatus';
 
 const SubmissionForm = ({
   pristine,
@@ -142,9 +143,15 @@ const SubmissionForm = ({
                       label={SUBMISSION_SECTION_LABELS[SUBMISSION_SECTIONS.summarySection]}
                     >
                       <ViewMetaData metadata={metadata} />
-
+                      <SubmissionStatus />
                     </Accordion>
                   }
+                  <Accordion
+                    id={SUBMISSION_SECTIONS.locationSection}
+                    label={SUBMISSION_SECTION_LABELS[SUBMISSION_SECTIONS.locationSection]}
+                  >
+                    <SubmissionLocationForm />
+                  </Accordion>
                   <Accordion
                     id={SUBMISSION_SECTIONS.bibInfoSection}
                     label={SUBMISSION_SECTION_LABELS[SUBMISSION_SECTIONS.bibInfoSection]}
@@ -156,12 +163,6 @@ const SubmissionForm = ({
                     label={SUBMISSION_SECTION_LABELS[SUBMISSION_SECTIONS.pubInfoSection]}
                   >
                     <SubmissionPubinfoForm />
-                  </Accordion>
-                  <Accordion
-                    id={SUBMISSION_SECTIONS.locationSection}
-                    label={SUBMISSION_SECTION_LABELS[SUBMISSION_SECTIONS.locationSection]}
-                  >
-                    <SubmissionLocationForm />
                   </Accordion>
                 </AccordionSet>
               </Col>
