@@ -16,6 +16,7 @@
   "view.submission.edit": "Edit submission",
   "view.submission.delete": "Delete submission",
   "view.delete.message": "Delete submission?",
+  "view.request.create": "Create request",
 
   "submissionList.id":  "ID",
   "submissionList.title": "Title",

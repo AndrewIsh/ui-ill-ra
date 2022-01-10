@@ -38,7 +38,8 @@ import {
 
 import {
   SUBMISSION_SECTIONS,
-  SUBMISSION_SECTION_LABELS
+  SUBMISSION_SECTION_LABELS,
+  REQUEST_CREATE_ROUTE
 } from '../../common/constants';
 
 import { getSubmissionTitle } from '../utils/utils';
@@ -78,38 +79,56 @@ const SubmissionDetails = ({
   const getActionMenu = useCallback(
     ({ onToggle }) => {
       return (
-        <MenuSection id="data-test-submissions-details-actions">
-          <IfPermission perm="ui-ill-ra.submission.edit">
-            <Button
-              buttonStyle="dropdownItem"
-              data-testid="edit-submission"
-              data-test-button-edit-submission
-              onClick={() => {
-                onToggle();
-                onEdit();
-              }}
-            >
-              <Icon size="small" icon="edit">
-                <FormattedMessage id="ui-ill-ra.view.edit" />
-              </Icon>
-            </Button>
-          </IfPermission>
-          <IfPermission perm="ui-ill-ra.submission.delete">
-            <Button
-              buttonStyle="dropdownItem"
-              data-testid="delete-submission"
-              data-test-button-delete-submission
-              onClick={() => {
-                onToggle();
-                toggleRemoveModal();
-              }}
-            >
-              <Icon size="small" icon="trash">
-                <FormattedMessage id="ui-ill-ra.view.delete" />
-              </Icon>
-            </Button>
-          </IfPermission>
-        </MenuSection>
+        <>
+          <MenuSection id="data-test-submissions-details-actions">
+            <IfPermission perm="ui-ill-ra.submission.edit">
+              <Button
+                buttonStyle="dropdownItem"
+                data-testid="edit-submission"
+                data-test-button-edit-submission
+                onClick={() => {
+                  onToggle();
+                  onEdit();
+                }}
+              >
+                <Icon size="small" icon="edit">
+                  <FormattedMessage id="ui-ill-ra.view.submission.edit" />
+                </Icon>
+              </Button>
+            </IfPermission>
+            <IfPermission perm="ui-ill-ra.submission.delete">
+              <Button
+                buttonStyle="dropdownItem"
+                data-testid="delete-submission"
+                data-test-button-delete-submission
+                onClick={() => {
+                  onToggle();
+                  toggleRemoveModal();
+                }}
+              >
+                <Icon size="small" icon="trash">
+                  <FormattedMessage id="ui-ill-ra.view.submission.delete" />
+                </Icon>
+              </Button>
+            </IfPermission>
+          </MenuSection>
+          <MenuSection id="data-test-submissions-details-request-actions">
+            <IfPermission perm="ui-ill-ra.request.create">
+              <Button
+                buttonStyle="dropdownItem"
+                data-testid="create-request"
+                data-test-button-create-request
+                to={{
+                  pathname: `${REQUEST_CREATE_ROUTE}${location.search}&submissionId=${submission.id}`
+                }}
+              >
+                <Icon size="small" icon="plus-sign">
+                  <FormattedMessage id="ui-ill-ra.view.request.create" />
+                </Icon>
+              </Button>
+            </IfPermission>
+          </MenuSection>
+        </>
       );
     },
     [onEdit, toggleRemoveModal],
