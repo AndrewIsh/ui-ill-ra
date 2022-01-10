@@ -41,6 +41,8 @@ import {
   SUBMISSION_SECTION_LABELS
 } from '../../common/constants';
 
+import { getSubmissionTitle } from '../utils/utils';
+
 import { SubmissionSummary } from './SubmissionSummary';
 import { SubmissionMetadata } from './SubmissionMetadata';
 import { SubmissionRequests } from './SubmissionRequests';
@@ -149,7 +151,7 @@ const SubmissionDetails = ({
       id="pane-submission-details"
       defaultWidth="fill"
       dismissible
-      paneTitle={'TESTING'} // TODO: Should be a title
+      paneTitle={getSubmissionTitle(submission)}
       paneTitleRef={paneTitleRef}
       onClose={onClose}
       actionMenu={getActionMenu}
