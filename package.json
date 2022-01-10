@@ -145,6 +145,44 @@
           "ui-ill-ra.submission.view"
         ],
         "visible": true
+      },
+      {
+        "permissionName": "ui-ill-ra.request.view",
+        "displayName": "ILL (Requesting Agency): View requests",
+        "subPermissions": [
+          "module.ill.enabled",
+          "ill-ra.requests.collection.get",
+          "ill-ra.requests.item.get"
+        ],
+        "visible": true
+      },
+      {
+        "permissionName": "ui-ill-ra.request.create",
+        "displayName": "ILL (Requesting Agency): Create requests",
+        "subPermissions": [
+          "ill-ra.requests.item.post",
+          "ill-ra.search.collection.get"
+        ],
+        "visible": true
+      },
+      {
+        "permissionName": "ui-ill-ra.request.edit",
+        "displayName": "ILL (Requesting Agency): Edit requests",
+        "subPermissions": [
+          "ui-ill-ra.request.view",
+          "ill-ra.requests.item.put",
+          "ill-ra.search.collection.get"
+        ],
+        "visible": true
+      },
+      {
+        "permissionName": "ui-ill-ra.delete.delete",
+        "displayName": "ILL (Requesting Agency): Delete requests",
+        "subPermissions": [
+          "ui-ill-ra.request.view",
+          "ill-ra.requests.item.delete"
+        ],
+        "visible": true
       }
     ]
   }
