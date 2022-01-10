@@ -89,7 +89,7 @@ export const SubmissionEdit = ({ match, history, location, mutator }) => {
       initialValues={submission}
       onSubmit={updateSubmission}
       cancelForm={cancelForm}
-      paneTitle={<FormattedMessage id="ui-ill-ra.view.edit" />}
+      paneTitle={<FormattedMessage id="ui-ill-ra.view.submission.edit" />}
     />
   );
 };

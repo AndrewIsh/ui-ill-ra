@@ -204,7 +204,7 @@ const SubmissionDetails = ({
           id="delete-submission-confirmation"
           confirmLabel={<FormattedMessage id="ui-ill-ra.submission.delete.confirmLabel" />}
           heading={<FormattedMessage id="ui-ill-ra.submission.delete.heading" values={{ submissionTitle: `${'TITLE HERE'}` }} />}
-          message={<FormattedMessage id="ui-ill-ra.view.delete.message" />}
+          message={<FormattedMessage id="ui-ill-ra.view.submission.delete.message" />}
           onCancel={toggleRemoveModal}
           onConfirm={onDelete}
           open

@@ -13,8 +13,8 @@
   "search.submissionMetadataBibliographicInfoTitleOfComponent": "Title of component",
   "search.submissionMetadataBibliographicInfoAuthorOfComponent": "Author of component",
 
-  "view.edit": "Edit submission",
-  "view.delete": "Delete submission",
+  "view.submission.edit": "Edit submission",
+  "view.submission.delete": "Delete submission",
   "view.delete.message": "Delete submission?",
 
   "submissionList.id":  "ID",
