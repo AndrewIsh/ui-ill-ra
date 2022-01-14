@@ -74,7 +74,7 @@
       "settings"
     ],
     "displayName": "ui-ill-ra.meta.title",
-    "route": "/illra/submissions",
+    "route": "/illra",
     "okapiInterfaces": {
       "ill-ra": "1.0.0",
       "users": "18.1",
