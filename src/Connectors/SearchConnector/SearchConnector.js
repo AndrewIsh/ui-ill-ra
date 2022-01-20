@@ -38,10 +38,14 @@ const columnWidths = {
 };
 
 const resultsFormatter = {
-  title: ({ title }) => title,
-  author: ({ author }) => author,
-  publisher: ({ publisher }) => publisher,
-  type: ({ type }) => type,
+  title: ({ metadata }) => metadata?.titleLevel?.title,
+  author: ({ metadata }) => metadata?.titleLevel?.author,
+  publisher: ({ metadata }) => metadata?.titleLevel?.publisher,
+  type: ({ metadata }) => {
+    let splut = metadata?.itemLevel.type.split('');
+    splut[0] = splut[0].toUpperCase();
+    return splut.join('');
+  },
 };
 
 const SearchConnector = ({
@@ -54,17 +58,6 @@ const SearchConnector = ({
   totalRecords
 }) => {
 
-  // Translate what data we've received into a flat structure
-  // so we can pass it to MultiColumnList
-  // We wouldn't be able to do this if we had overlapping property
-  // names in nested object, but we don't
-  const flat = results.map(result => ({
-    id: result.id,
-    available: result.available,
-    ...result?.metadata?.itemLevel,
-    ...result?.metadata?.titleLevel
-  }));
-
   const resultsStatusMessage = (
     <NoResultsMessage
       isLoading={isLoading}
@@ -75,12 +68,12 @@ const SearchConnector = ({
       toggleFilters={() => { }}
     />
   );
-  console.log(flat);
+
   return <>
     <MultiColumnList
       id="connector-search-results"
       totalCount={totalRecords}
-      contentData={flat}
+      contentData={results}
       visibleColumns={visibleColumns}
       columnMapping={columnMapping}
       columnWidths={columnWidths}
