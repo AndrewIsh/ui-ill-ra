@@ -6,17 +6,13 @@ import {
 } from '@folio/stripes/core';
 
 import {
-  RESULT_COUNT_INCREMENT,
-  usePagination,
-} from '@folio/stripes-acq-components';
-
-import {
   SEARCH_API
 } from '../../../common/constants';
 
 import { useIsoToCql } from '../useIsoToCql';
 
 const useConnectorSearch = ({
+  pagination,
   submission,
   connector
 }) => {
@@ -24,10 +20,6 @@ const useConnectorSearch = ({
   const ky = useOkapiKy();
   const [namespace] = useNamespace({ key: connector.id });
   const query = useIsoToCql({ iso: submission.submissionMetadata });
-
-  const {
-    pagination,
-  } = usePagination({ limit: RESULT_COUNT_INCREMENT, offset: 0 });
 
   const searchParams = {
     query,
