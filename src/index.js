@@ -8,6 +8,7 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 import { hot } from 'react-hot-loader';
 
 import { Submissions } from './Submissions';
+import { Requests } from './Requests';
 import Settings from './settings';
 import {
   ROOT,
@@ -40,6 +41,10 @@ class Ill extends React.Component {
         <Route
           path={SUBMISSIONS_ROUTE}
           component={Submissions}
+        />
+        <Route
+          path={REQUESTS_ROUTE}
+          component={Requests}
         />
       </Switch>
     );

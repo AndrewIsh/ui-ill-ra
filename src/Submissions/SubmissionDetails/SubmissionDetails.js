@@ -119,7 +119,8 @@ const SubmissionDetails = ({
                 data-testid="create-request"
                 data-test-button-create-request
                 to={{
-                  pathname: `${REQUEST_CREATE_ROUTE}${location.search}&submissionId=${submission.id}`
+                  pathname: REQUEST_CREATE_ROUTE,
+                  search: `${location.search}&submissionId=${submission.id}`
                 }}
               >
                 <Icon size="small" icon="plus-sign">

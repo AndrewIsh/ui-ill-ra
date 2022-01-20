@@ -88,6 +88,16 @@
 
   "submission.create.title": "Create submission",
 
+  "request.create.pane.title": "Create request",
+  "request.create.pane.suppliers": "Available suppliers:",
+
+  "connector.ability.canSearch": "This supplier can be searched",
+
+  "connector.search.result.title": "Title",
+  "connector.search.result.author": "Author",
+  "connector.search.result.publisher": "Publisher",
+  "connector.search.result.type": "Publication type",
+
   "save.error.genericError": "Unable to save",
 
   "button.saveAndClose": "Save & close"

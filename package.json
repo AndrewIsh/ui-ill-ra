@@ -108,6 +108,14 @@
         ]
       },
       {
+        "permissionName": "ui-ill-ra.connectors.info",
+        "displayName": "ILL (Requesting Agency): Retrieve self descriptive information from a connector",
+        "visible": false,
+        "subPermissions": [
+          "ill-connector.info.item.get"
+        ]
+      },
+      {
         "permissionName": "ui-ill-ra.submission.view",
         "displayName": "ILL (Requesting Agency): View submissions",
         "subPermissions": [
@@ -151,7 +159,6 @@
         "displayName": "ILL (Requesting Agency): View requests",
         "subPermissions": [
           "module.ill.enabled",
-          "ill-ra.requests.collection.get",
           "ill-ra.requests.item.get"
         ],
         "visible": true
@@ -160,6 +167,7 @@
         "permissionName": "ui-ill-ra.request.create",
         "displayName": "ILL (Requesting Agency): Create requests",
         "subPermissions": [
+          "ui-ill-ra.connectors.info",
           "ill-ra.requests.item.post",
           "ill-ra.search.collection.get"
         ],
