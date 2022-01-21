@@ -1,4 +1,5 @@
 import { useQuery } from 'react-query';
+import PropTypes from 'prop-types';
 
 import {
   useNamespace,
@@ -49,9 +50,21 @@ const useConnectorSearch = ({
 
   return {
     isLoading: isFetching,
-    results: data
+    results: data || []
   };
 
+};
+
+useConnectorSearch.propTypes = {
+  pagination: PropTypes.object.isRequired,
+  submission: PropTypes.object.isRequired,
+  connector: PropTypes.object.isRequired
+};
+
+useConnectorSearch.defaultProps = {
+  pagination: {},
+  submission: {},
+  connector: {}
 };
 
 export default useConnectorSearch;

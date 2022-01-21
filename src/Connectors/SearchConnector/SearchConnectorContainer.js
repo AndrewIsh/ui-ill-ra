@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import {
   RESULT_COUNT_INCREMENT,
@@ -17,8 +18,7 @@ const SearchConnectorContainer = ({
 
   const {
     pagination,
-    changePage,
-    refreshPage
+    changePage
   } = usePagination({ limit: RESULT_COUNT_INCREMENT, offset: 0 });
 
   const { isLoading, results } = useConnectorSearch({
@@ -27,19 +27,20 @@ const SearchConnectorContainer = ({
     connector
   });
 
-  if (!results) return null;
-
   return (
     <SearchConnector
       onNeedMoreData={changePage}
-      resetData={() => { }}
       totalRecords={results.totalRecords}
       isLoading={isLoading}
-      refreshList={refreshPage}
       pagination={pagination}
       results={results.results}
     />
   );
+};
+
+SearchConnectorContainer.propTypes = {
+  submission: PropTypes.object.isRequired,
+  connector: PropTypes.object.isRequired
 };
 
 export default SearchConnectorContainer;

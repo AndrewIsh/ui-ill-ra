@@ -29,6 +29,12 @@ const RequestPane = ({
   submission
 }) => {
 
+  // Return if we've not yet got any connectors. They are populated asynchonously and if
+  // we proceed and call useAccordionToggle with an unpopulated set of connectors our initial
+  // accordion state won't be set correctly (since useAccordionToggle's useState will only be
+  // called on the first render)
+  if (connectors.length === 0) return null;
+
   const initialAccordionStatus = connectors.reduce(
     (acc, connector) => ({ ...acc, [connector.id]: connectors.length === 1 ? true : false }),
     {}
@@ -102,10 +108,12 @@ const RequestPane = ({
                     displayWhenClosed={<ConnectorAbilities connector={connector} />}
                     displayWhenOpen={<ConnectorAbilities connector={connector} />}
                   >
-                    <SearchConnectorContainer
-                      submission={submission}
-                      connector={connector}
-                    />
+                    {stateSections[connector.id] ? (
+                      <SearchConnectorContainer
+                        submission={submission}
+                        connector={connector}
+                      />
+                    ) : <></>}
                   </Accordion>
                 )}
               </AccordionSet>

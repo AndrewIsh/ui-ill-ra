@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import { FormattedMessage } from 'react-intl';
 
@@ -8,18 +9,10 @@ import {
 
 import {
   RESULT_COUNT_INCREMENT,
-  FiltersPane,
-  handleKeyCommand,
-  NoResultsMessage,
-  ResetButton,
-  ResultsPane,
-  SingleSearchForm,
   PrevNextPagination,
-  useFiltersToogle,
-  useLocationFilters,
-  useLocationSorting,
-  useItemToView,
 } from '@folio/stripes-acq-components';
+
+import { NoResultsMessage } from './NoResultsMessage';
 
 const visibleColumns = ['title', 'author', 'publisher', 'type'];
 
@@ -49,24 +42,15 @@ const resultsFormatter = {
 };
 
 const SearchConnector = ({
-  isLoading,
   onNeedMoreData,
+  totalRecords,
+  isLoading,
   pagination,
-  refreshList,
-  resetData,
-  results,
-  totalRecords
+  results
 }) => {
 
   const resultsStatusMessage = (
-    <NoResultsMessage
-      isLoading={isLoading}
-    //filters={filters}
-    //isFiltersOpened={isFiltersOpened}
-    isFiltersOpened={false}
-    //toggleFilters={toggleFilters}
-      toggleFilters={() => { }}
-    />
+    <NoResultsMessage isLoading={isLoading} />
   );
 
   return <>
@@ -80,19 +64,10 @@ const SearchConnector = ({
       formatter={resultsFormatter}
       loading={isLoading}
       onNeedMoreData={onNeedMoreData}
-      //        sortOrder={sortingField}
-      //        sortDirection={sortingDirection}
-      //        onHeaderClick={changeSorting}
-      //        onRowClick={openSubmissionDetails}
       isEmptyMessage={resultsStatusMessage}
       pagingType="click"
       hasMargin
       pageAmount={RESULT_COUNT_INCREMENT}
-      //height={height - PrevNextPagination.HEIGHT}
-      //width={width}
-    //        itemToView={itemToView}
-    //        onMarkPosition={setItemToView}
-    //        onResetMark={deleteItemToView}
     />
     {results.length > 0 && (
       <PrevNextPagination
@@ -104,5 +79,18 @@ const SearchConnector = ({
     )}
   </>
 }
+
+SearchConnector.propTypes = {
+  isLoading: PropTypes.bool.isRequired,
+  onNeedMoreData: PropTypes.func.isRequired,
+  pagination: PropTypes.object.isRequired,
+  results: PropTypes.array.isRequired,
+  totalRecords: PropTypes.number.isRequired
+};
+
+SearchConnector.defaultProps = {
+  results: [],
+  totalRecords: 0
+};
 
 export default SearchConnector;
