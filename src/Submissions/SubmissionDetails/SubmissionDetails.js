@@ -42,7 +42,7 @@ import {
   REQUEST_CREATE_ROUTE
 } from '../../common/constants';
 
-import { getSubmissionTitle } from '../utils/utils';
+import { useTitle } from '../../common/hooks/useTitle';
 
 import { SubmissionSummary } from './SubmissionSummary';
 import { SubmissionMetadata } from './SubmissionMetadata';
@@ -61,6 +61,7 @@ const SubmissionDetails = ({
 }) => {
   const stripes = useStripes();
   const [isRemoveModalOpened, toggleRemoveModal] = useModalToggle();
+  const [title] = useTitle(submission?.submissionMetadata?.BibliographicInfo);
   const initialAccordionStatus = {
     [SUBMISSION_SECTIONS.summarySection]: true,
     [SUBMISSION_SECTIONS.requestsSection]: false
@@ -171,7 +172,7 @@ const SubmissionDetails = ({
       id="pane-submission-details"
       defaultWidth="fill"
       dismissible
-      paneTitle={getSubmissionTitle(submission)}
+      paneTitle={title}
       paneTitleRef={paneTitleRef}
       onClose={onClose}
       actionMenu={getActionMenu}
