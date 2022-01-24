@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 
 import { FormattedMessage } from 'react-intl';
 
+import css from './SearchConnector.css';
+
 import {
   MultiColumnList,
 } from '@folio/stripes/components';
@@ -14,31 +16,49 @@ import {
 
 import { NoResultsMessage } from './NoResultsMessage';
 
-const visibleColumns = ['title', 'author', 'publisher', 'type'];
+const visibleColumns = ['title', 'author', 'publisher', 'identifier', 'type'];
 
 const columnMapping = {
   title: <FormattedMessage id="ui-ill-ra.connector.search.result.title" />,
   author: <FormattedMessage id="ui-ill-ra.connector.search.result.author" />,
   publisher: <FormattedMessage id="ui-ill-ra.connector.search.result.publisher" />,
+  identifier: <FormattedMessage id="ui-ill-ra.connector.search.result.identifier" />,
   type: <FormattedMessage id="ui-ill-ra.connector.search.result.type" />,
 };
 
 const columnWidths = {
   title: '500px',
-  author: '500px',
-  publisher: '500px',
-  type: '100px'
+  author: '400px',
+  publisher: '400px',
+  identifier: '200px',
+  type: '150px'
 };
 
 const resultsFormatter = {
-  title: ({ metadata }) => metadata?.titleLevel?.title,
-  author: ({ metadata }) => metadata?.titleLevel?.author,
-  publisher: ({ metadata }) => metadata?.titleLevel?.publisher,
+  title: ({ metadata }) => metadata?.BibliographicInfo?.Title,
+  author: ({ metadata }) => metadata?.BibliographicInfo?.Author,
+  publisher: ({ metadata }) => metadata?.PublicationInfo?.Publisher,
+  identifier: ({ metadata }) => {
+    const ids = metadata?.BibliographicInfo?.BibliographicItemId;
+    let toReturn = [];
+    if (ids && ids.length > 0) {
+      toReturn = ids.map(id =>
+        <div key={id.BibliographicItemIdentifier}>{id.BibliographicItemIdentifierCode}: {id.BibliographicItemIdentifier}</div>
+      );
+    }
+    return <>{toReturn.map(id => id)}</>;
+  },
   type: ({ metadata }) => {
-    let splut = metadata?.itemLevel.type.split('');
+    let splut = metadata?.PublicationInfo?.PublicationType?.split('');
     splut[0] = splut[0].toUpperCase();
     return splut.join('');
   },
+};
+
+const columnFormatter = (currentClass, rowData, columnName) => {
+  if (columnName === 'identifier') {
+    return `${currentClass} ${css.flexDown}`;
+  }
 };
 
 const SearchConnector = ({
@@ -62,6 +82,7 @@ const SearchConnector = ({
       columnMapping={columnMapping}
       columnWidths={columnWidths}
       formatter={resultsFormatter}
+      getCellClass={columnFormatter}
       loading={isLoading}
       onNeedMoreData={onNeedMoreData}
       isEmptyMessage={resultsStatusMessage}

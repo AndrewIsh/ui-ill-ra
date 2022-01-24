@@ -96,6 +96,7 @@
   "connector.search.result.title": "Title",
   "connector.search.result.author": "Author",
   "connector.search.result.publisher": "Publisher",
+  "connector.search.result.identifier": "Identifier",
   "connector.search.result.type": "Publication type",
 
   "save.error.genericError": "Unable to save",
