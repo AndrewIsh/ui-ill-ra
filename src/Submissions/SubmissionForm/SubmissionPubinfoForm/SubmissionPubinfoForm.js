@@ -12,7 +12,7 @@ import {
   Datepicker
 } from '@folio/stripes/components';
 
-import { PUBLICATION_TYPE } from '../../../common/constants';
+import { PUBLICATION_TYPE } from '@ptfs-europe/ill-components';
 
 const SubmissionBibinfoForm = () => {
   return (

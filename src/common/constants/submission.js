@@ -46,27 +46,3 @@ export const MAP_FIELD_ACCORDION = {
   PublicationDate: SUBMISSION_SECTIONS.pubInfoSection,
   PlaceOfPublication: SUBMISSION_SECTIONS.pubInfoSection
 };
-
-// ISO18626 PublicationType values
-export const PUBLICATION_TYPE = [
-  'ArchiveMaterial',
-  'Article',
-  'AudioBook',
-  'Book',
-  'Chapter',
-  'ConferenceProc',
-  'Game',
-  'GovernmentPubl',
-  'Image',
-  'Journal',
-  'Manuscript',
-  'Map',
-  'Movie',
-  'MusicRecording',
-  'MusicScore',
-  'Newspaper',
-  'Patent',
-  'Report',
-  'SoundRecording',
-  'Thesis'
-];
