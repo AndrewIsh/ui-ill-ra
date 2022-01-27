@@ -6,8 +6,10 @@ import {
   Row,
 } from '@folio/stripes/components';
 
-import { BibliographicInfo } from './BibliographicInfo';
-import { PublicationInfo } from './PublicationInfo';
+import {
+  BibliographicInfo,
+  PublicationInfo
+} from '@ptfs-europe/ill-components';
 
 const SubmissionMetadata = ({
   submission

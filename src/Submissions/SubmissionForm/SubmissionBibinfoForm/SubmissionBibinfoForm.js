@@ -26,7 +26,7 @@ const getCol = ({ col }) => {
         component={TextField}
         fullWidth
         id={col}
-        label={<FormattedMessage id={`ui-ill-ra.submission.metadata.bibInfo.${col}`} />}
+        label={<FormattedMessage id={`ui-ill-components.iso18626.bibInfo.${col}`} />}
         name={`submissionMetadata.BibliographicInfo.${col}`}
         validateFields={[]}
       />

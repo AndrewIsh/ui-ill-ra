@@ -8,14 +8,10 @@
   "search": "Search",
   "search.keyword": "All",
   "search.id": "ID",
-  "search.submissionMetadataBibliographicInfoTitle": "Title",
-  "search.submissionMetadataBibliographicInfoAuthor": "Author",
-  "search.submissionMetadataBibliographicInfoTitleOfComponent": "Title of component",
-  "search.submissionMetadataBibliographicInfoAuthorOfComponent": "Author of component",
 
   "view.submission.edit": "Edit submission",
   "view.submission.delete": "Delete submission",
-  "view.delete.message": "Delete submission?",
+  "view.submission.delete.message": "Are you sure you want to delete this submission?",
   "view.request.create": "Create request",
 
   "submissionList.id":  "ID",
@@ -24,7 +20,7 @@
   "submissionList.publicationType": "Publication type",
 
   "submission.delete.confirmLabel": "Delete",
-  "submission.delete.heading": "Delete {submissionTitle}?",
+  "submission.delete.heading": "Delete \"{submissionTitle}?\"",
   "submission.delete.success": "Deleted submission",
 
   "submission.heading.summary": "Summary",
@@ -40,64 +36,12 @@
 
   "submission.metadata.location": "Submission location",
 
-  "submission.metadata.bibInfo.SupplierUniqueRecordId": "Supplier ID",
-  "submission.metadata.bibInfo.Title": "Title",
-  "submission.metadata.bibInfo.Author": "Author",
-  "submission.metadata.bibInfo.Subtitle": "Subtitle",
-  "submission.metadata.bibInfo.SeriesTitle": "Title of series",
-  "submission.metadata.bibInfo.Edition": "Edition number",
-  "submission.metadata.bibInfo.TitleOfComponent": "Component title",
-  "submission.metadata.bibInfo.AuthorOfComponent": "Component author",
-  "submission.metadata.bibInfo.Volume": "Volume number",
-  "submission.metadata.bibInfo.Issue": "Issue number",
-  "submission.metadata.bibInfo.PagesRequested": "Page from and page to",
-  "submission.metadata.bibInfo.EstimatedNoPages": "Expected number of pages",
-  "submission.metadata.bibInfo.BibliographicItemId": "Bibliographic item ID",
-  "submission.metadata.bibInfo.Sponsor": "Publication sponsor",
-  "submission.metadata.bibInfo.InformationSource": "Bibliographic information source",
-  "submission.metadata.bibInfo.BibliographicRecordId": "Bibliographic record ID",
-
-  "submission.metadata.pubInfo.Publisher": "Publisher",
-  "submission.metadata.pubInfo.PublicationType": "Publication type",
-  "submission.metadata.pubInfo.PublicationDate": "Publication date",
-  "submission.metadata.pubInfo.PlaceOfPublication": "Place of publication",
-
-  "submission.metadata.pubInfo.PublicationType.ArchiveMaterial": "Archive material",
-  "submission.metadata.pubInfo.PublicationType.Article": "Article",
-  "submission.metadata.pubInfo.PublicationType.AudioBook": "Audio book",
-  "submission.metadata.pubInfo.PublicationType.Book": "Book",
-  "submission.metadata.pubInfo.PublicationType.Chapter": "Chapter",
-  "submission.metadata.pubInfo.PublicationType.ConferenceProc": "Conference proceedings",
-  "submission.metadata.pubInfo.PublicationType.Game": "Game",
-  "submission.metadata.pubInfo.PublicationType.GovernmentPubl": "Government publication",
-  "submission.metadata.pubInfo.PublicationType.Image": "Image",
-  "submission.metadata.pubInfo.PublicationType.Journal": "Journal",
-  "submission.metadata.pubInfo.PublicationType.Manuscript": "Manuscript",
-  "submission.metadata.pubInfo.PublicationType.Map": "Map",
-  "submission.metadata.pubInfo.PublicationType.Movie": "Movie",
-  "submission.metadata.pubInfo.PublicationType.MusicRecording": "Music recording",
-  "submission.metadata.pubInfo.PublicationType.MusicScore": "Music score",
-  "submission.metadata.pubInfo.PublicationType.Newspaper": "Newspaper",
-  "submission.metadata.pubInfo.PublicationType.Patent": "Patent",
-  "submission.metadata.pubInfo.PublicationType.Report": "Report",
-  "submission.metadata.pubInfo.PublicationType.SoundRecording": "Sound recording",
-  "submission.metadata.pubInfo.PublicationType.Thesis": "Thesis",
-
-  "submission.requests.request.supplier.name": "Supplier",
-  "submission.requests.request.supplierRequestId": "Supplier request ID",
-
   "submission.create.title": "Create submission",
 
   "request.create.pane.title": "Create request",
   "request.create.pane.suppliers": "Available suppliers:",
 
   "connector.ability.canSearch": "This supplier can be searched",
-
-  "connector.search.result.title": "Title",
-  "connector.search.result.author": "Author",
-  "connector.search.result.publisher": "Publisher",
-  "connector.search.result.identifier": "Identifier",
-  "connector.search.result.type": "Publication type",
 
   "save.error.genericError": "Unable to save",
 

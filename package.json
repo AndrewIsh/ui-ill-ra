@@ -25,7 +25,6 @@
     "@babel/preset-env": "^7.0.0",
     "@babel/preset-react": "^7.9.0",
     "@folio/eslint-config-stripes": "^6.0.0",
-    "@folio/stripes": "^7.0.0",
     "@folio/stripes-cli": "^2.4.0 || ^2.4.0",
     "@folio/stripes-core": "^8.0.0",
     "@formatjs/cli": "^4.2.29",
@@ -44,18 +43,16 @@
     "jest-canvas-mock": "^2.3.0",
     "jest-junit": "^12.0.0",
     "mocha": "^5.2.0",
-    "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-hot-loader": "^4.3.12",
-    "react-intl": "^5.8.0",
     "react-redux": "^7.2.2",
-    "react-router-dom": "^5.2.0",
     "react-router-prop-types": "^1.0.4",
     "redux": "^4.0.5",
     "regenerator-runtime": "^0.13.3"
   },
   "dependencies": {
     "@folio/stripes-acq-components": "~3.0.0",
+    "@ptfs-europe/ill-components": "file:../ui-ill-components",
     "prop-types": "^15.6.0"
   },
   "peerDependencies": {

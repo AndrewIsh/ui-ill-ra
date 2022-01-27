@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 
@@ -6,6 +6,11 @@ import {
   handleKeyCommand,
   useAccordionToggle
 } from '@folio/stripes-acq-components';
+
+import {
+  withStripes,
+  HandlerManager
+} from '@folio/stripes/core';
 
 import {
   Accordion,
@@ -20,13 +25,13 @@ import {
 } from '@folio/stripes/components';
 
 import { ConnectorAbilities } from '../../Connectors/ConnectorAbilities';
-import { SearchConnectorContainer } from '../../Connectors/SearchConnector';
 
 const RequestPane = ({
   paneTitle,
   cancelForm,
   connectors,
-  submission
+  submission,
+  stripes
 }) => {
 
   // Return if we've not yet got any connectors. They are populated asynchonously and if
@@ -34,6 +39,8 @@ const RequestPane = ({
   // accordion state won't be set correctly (since useAccordionToggle's useState will only be
   // called on the first render)
   if (connectors.length === 0) return null;
+
+  const [connectorName, setConnectorName] = useState({});
 
   const initialAccordionStatus = connectors.reduce(
     (acc, connector) => ({ ...acc, [connector.id]: connectors.length === 1 ? true : false }),
@@ -57,6 +64,15 @@ const RequestPane = ({
       handler: () => expandAll(mapValues(stateSections, () => false)),
     }
   ];
+
+  const updateConnectorName = ({ id, name }) => {
+    if (!connectorName[id]) {
+      setConnectorName({
+        ...connectorName,
+        [id]: name
+      });
+    }
+  };
 
   return (
     <HasCommand
@@ -100,22 +116,27 @@ const RequestPane = ({
                 accordionStatus={stateSections}
                 onToggle={toggleSection}
               >
-                {connectors.map((connector) =>
+                {connectors.map((connector) => (
                   <Accordion
                     id={connector.id}
                     key={connector.id}
-                    label={connector.name}
+                    label={connectorName[connector.id] || ''}
                     displayWhenClosed={<ConnectorAbilities connector={connector} />}
                     displayWhenOpen={<ConnectorAbilities connector={connector} />}
                   >
                     {stateSections[connector.id] ? (
-                      <SearchConnectorContainer
-                        submission={submission}
-                        connector={connector}
+                      <HandlerManager
+                        event="ui-ill-ra-request-create"
+                        stripes={stripes}
+                        data={{
+                          submission,
+                          connector,
+                          updateConnectorName
+                        }}
                       />
                     ) : <></>}
                   </Accordion>
-                )}
+                ))}
               </AccordionSet>
             </Col>
           </Row>
@@ -138,4 +159,4 @@ RequestPane.defaultProps = {
   submission: {}
 };
 
-export default RequestPane;
+export default withStripes(RequestPane);
