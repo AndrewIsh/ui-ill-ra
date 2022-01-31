@@ -52,7 +52,7 @@
   },
   "dependencies": {
     "@folio/stripes-acq-components": "~3.0.0",
-    "@ptfs-europe/ill-components": "file:../ui-ill-components",
+    "@ptfs-europe/ill-components": "^1.0.0",
     "prop-types": "^15.6.0"
   },
   "peerDependencies": {
