@@ -165,6 +165,7 @@
         "displayName": "ILL (Requesting Agency): Create requests",
         "subPermissions": [
           "ui-ill-ra.connectors.info",
+          "ill-ra.connectors.collection.get",
           "ill-ra.requests.item.post",
           "ill-ra.search.collection.get"
         ],
