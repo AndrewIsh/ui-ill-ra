@@ -52,7 +52,12 @@ const useConnectors = () => {
     () => queryFn(ky)
   );
 
-  if (isFetching || results.length > 0) {
+  if (
+    isFetching ||
+    results.length > 0 ||
+    !data ||
+    data.connectors.length === 0
+  ) {
     return {
       isLoading,
       results
