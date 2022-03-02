@@ -84,7 +84,7 @@ export const SubmissionDetailsContainer = ({
 
   const deleteSubmission = useCallback(
     () => {
-      mutator.submissionDetails.DELETE({ id: submission.id }, { silent: true }).then(() => {
+      mutator.submissionDetails.DELETE({ id: params.id }, { silent: true }).then(() => {
         showCallout({
           messageId: 'ui-ill-ra.submission.delete.success',
           type: 'success'
