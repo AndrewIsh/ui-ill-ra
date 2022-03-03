@@ -167,7 +167,8 @@
           "ui-ill-ra.connectors.info",
           "ill-ra.connectors.collection.get",
           "ill-ra.requests.item.post",
-          "ill-ra.search.collection.get"
+          "ill-ra.search.collection.get",
+          "ill-connector.action.item.post"
         ],
         "visible": true
       },
@@ -187,6 +188,15 @@
         "subPermissions": [
           "ui-ill-ra.request.view",
           "ill-ra.requests.item.delete"
+        ],
+        "visible": true
+      },
+      {
+        "permissionName": "ui-ill-ra.message.view",
+        "displayName": "ILL (Requesting Agency): View supplying agency messages",
+        "subPermissions": [
+          "module.ill.enabled",
+          "ill-ra.messages.collection.get"
         ],
         "visible": true
       }

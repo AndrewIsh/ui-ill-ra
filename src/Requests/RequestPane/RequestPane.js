@@ -129,6 +129,7 @@ const RequestPane = ({
                         event="ui-ill-ra-request-create"
                         stripes={stripes}
                         data={{
+                          event: 'ui-ill-ra-request-create',
                           submission,
                           connector,
                           updateConnectorName

@@ -31,6 +31,7 @@
   "submission.heading.bibinfo": "Bibliographic information",
   "submission.heading.pubinfo": "Publication information",
 
+  "submission.summary.id": "Submission ID",
   "submission.summary.status": "Submission status",
   "submission.summary.user": "Submitted by",
 

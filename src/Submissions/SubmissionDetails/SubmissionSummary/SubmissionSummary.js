@@ -44,13 +44,22 @@ const SubmissionSummary = ({
       <Col xs={6}>
         {status && (
           <KeyValue
+            data-testid="id"
+            label={<FormattedMessage id="ui-ill-ra.submission.summary.id" />}
+            value={status.id}
+          />
+        )}
+      </Col>
+      <Col xs={3}>
+        {status && (
+          <KeyValue
             data-testid="name"
             label={<FormattedMessage id="ui-ill-ra.submission.summary.status" />}
             value={status.name}
           />
         )}
       </Col>
-      <Col xs={6}>
+      <Col xs={3}>
         {submission.userId && (
           <KeyValue
             data-testid="name"

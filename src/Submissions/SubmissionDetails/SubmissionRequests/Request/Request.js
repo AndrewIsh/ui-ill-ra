@@ -3,12 +3,16 @@ import PropTypes from 'prop-types';
 
 import { RequestSummary } from './RequestSummary';
 
-const Request = ({ request }) => {
-  return <RequestSummary request={request} />;
+const Request = ({ request, connectors }) => {
+  return <RequestSummary
+    request={request}
+    connectors={connectors}
+  />;
 };
 
 Request.propTypes = {
-  request: PropTypes.object.isRequired
+  request: PropTypes.object.isRequired,
+  connectors: PropTypes.array.isRequired
 };
 
 export default Request;

@@ -1,49 +1,64 @@
-import React, { useState, useEffect, useCallback } from 'react';
-import { FormattedMessage } from 'react-intl';
+import React from 'react';
 import PropTypes from 'prop-types';
+
+import {
+  HandlerManager,
+  withStripes
+} from '@folio/stripes-core';
 
 import {
   Row,
   Col,
-  KeyValue
 } from '@folio/stripes/components';
+
 import {
   ViewMetaData
 } from '@folio/stripes/smart-components';
 
 import { REQUEST_SECTIONS } from '../../../../../common/constants';
 
-const RequestSummary = ({ request }) => {
-  const [requestMetadata, setRequestMetadata] = useState({});
+import { useMessages } from '../../../../../Requests/hooks/useMessages';
 
-  useEffect(() => setRequestMetadata(
-    JSON.parse(request.requestMetadata)
-  ), [request.requestMetadata]);
+import css from './RequestSummary.css';
+
+const RequestSummary = ({ request, stripes, connectors }) => {
+  const { isLoading, results } = useMessages({ requestId: request.id });
+
+  const getConnectorName = id => {
+    const connector = connectors.find(conn => conn.id === id);
+    return connector ? connector.name : null;
+  }
 
   return <>
+    <Row>
+      <Col xs={12}>
+        <h3>{getConnectorName(request.connectorId)}</h3>
+      </Col>
+    </Row>
     <Row>
       <Col xs={12}>
         {request.metadata && (
           <ViewMetaData
             id={`${REQUEST_SECTIONS.summarySection}.metadata`}
-            metadata={request.metadata}
+            metadata={request?.metadata}
           />
         )}
       </Col>
     </Row>
-    <Row>
-      <Col xs={6}>
-        <KeyValue
-          data-testid="connector"
-          label={<FormattedMessage id="ui-ill-ra.submission.requests.request.supplier.name" />}
-          value={requestMetadata.connector}
-        />
-      </Col>
-      <Col xs={6}>
-        <KeyValue
-          data-testid="connector"
-          label={<FormattedMessage id="ui-ill-ra.submission.requests.request.supplierRequestId" />}
-          value={requestMetadata.Header?.SupplyingAgencyRequestId}
+    <Row className={css.summary}>
+      <Col xs={12}>
+        <HandlerManager
+          event="ui-ill-ra-request-display"
+          stripes={stripes}
+          data={{
+            event: 'ui-ill-ra-request-display',
+            connector: { id: request.connectorId },
+            request,
+            messages: {
+              isLoading,
+              results
+            }
+          }}
         />
       </Col>
     </Row>
@@ -51,7 +66,9 @@ const RequestSummary = ({ request }) => {
 };
 
 RequestSummary.propTypes = {
-  request: PropTypes.object.isRequired
+  request: PropTypes.object.isRequired,
+  stripes: PropTypes.object.isRequired,
+  connectors: PropTypes.array.isRequired
 };
 
-export default RequestSummary;
+export default withStripes(RequestSummary);

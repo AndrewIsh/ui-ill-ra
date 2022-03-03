@@ -41,16 +41,14 @@ import {
 import SubmissionsListLastMenu from './SubmissionsListLastMenu';
 
 const resultsPaneTitle = <FormattedMessage id="ui-ill-ra.meta.title" />;
-const visibleColumns = ['subId', 'title', 'partTitle', 'publicationType'];
-const sortableFields = ['subId', 'title', 'partTitle', 'publicationType'];
+const visibleColumns = ['title', 'partTitle', 'publicationType'];
+const sortableFields = ['title', 'partTitle', 'publicationType'];
 const columnMapping = {
-  subId: <FormattedMessage id="ui-ill-ra.submissionList.id" />,
   title: <FormattedMessage id="ui-ill-ra.submissionList.title" />,
   partTitle: <FormattedMessage id="ui-ill-ra.submissionList.partTitle" />,
   publicationType: <FormattedMessage id="ui-ill-ra.submissionList.publicationType" />
 };
 const resultsFormatter = {
-  subId: ({ id }) => id,
   title: ({ submissionMetadata }) => submissionMetadata?.BibliographicInfo?.Title,
   partTitle: ({ submissionMetadata }) => submissionMetadata?.BibliographicInfo?.TitleOfComponent,
   publicationType: ({ submissionMetadata }) => submissionMetadata?.PublicationInfo?.PublicationType
