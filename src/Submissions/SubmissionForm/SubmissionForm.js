@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { FormattedMessage } from 'react-intl';
 import { useHistory } from 'react-router';
@@ -156,7 +156,7 @@ const SubmissionForm = ({
                     id={SUBMISSION_SECTIONS.bibInfoSection}
                     label={SUBMISSION_SECTION_LABELS[SUBMISSION_SECTIONS.bibInfoSection]}
                   >
-                    <SubmissionBibinfoForm />
+                    <SubmissionBibinfoForm form={form} />
                   </Accordion>
                   <Accordion
                     id={SUBMISSION_SECTIONS.pubInfoSection}
@@ -196,6 +196,6 @@ export default stripesForm({
   keepDirtyOnReinitialize: true,
   navigationCheck: true,
   subscription: { values: true },
-  validateOnBlur: true,
+  validateOnBlur: true
 })(SubmissionForm);
 

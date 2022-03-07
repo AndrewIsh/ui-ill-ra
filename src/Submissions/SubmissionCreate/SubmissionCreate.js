@@ -37,7 +37,6 @@ const SubmissionCreate = ({ history, location, mutator, okapi }) => {
     (data) => {
       // Add the user to the submission body before it is sent
       data.userId = okapi.currentUser.id;
-
       return mutator.createSubmission.POST(data)
         .then(submission => {
           setTimeout(() => cancelForm(submission.id));
