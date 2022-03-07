@@ -36,6 +36,8 @@
   "submission.summary.user": "Submitted by",
 
   "submission.metadata.location": "Submission location",
+  "submission.identifier.add": "Add {identifierType}",
+  "submission.identifier.selectCode": "Choose type",
 
   "submission.create.title": "Create submission",
 
