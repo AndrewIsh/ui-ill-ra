@@ -22,7 +22,7 @@ const SubmissionBibinfoForm = () => {
           component={TextField}
           fullWidth
           id="Publisher"
-          label={<FormattedMessage id="ui-ill-components.iso18626.pubInfo.Publisher" />}
+          label={<FormattedMessage id="ui-ill-components.iso18626.PublicationInfo.Publisher" />}
           name="submissionMetadata.PublicationInfo.Publisher"
           validateFields={[]}
         />
@@ -31,14 +31,14 @@ const SubmissionBibinfoForm = () => {
         <Field
           component={Select}
           fullWidth
-          label={<FormattedMessage id="ui-ill-components.iso18626.pubInfo.PublicationType" />}
+          label={<FormattedMessage id="ui-ill-components.iso18626.PublicationInfo.PublicationType" />}
           name="submissionMetadata.PublicationInfo.PublicationType"
           placeholder=" "
           validateFields={[]}
         >
           {PUBLICATION_TYPE.map((pubType) => (
             <FormattedMessage
-              id={`ui-ill-components.iso18626.pubInfo.PublicationType.${pubType}`}
+              id={`ui-ill-components.iso18626.PublicationInfo.PublicationType.${pubType}`}
               key={pubType}
             >
               {(message) => <option value={pubType}>{message}</option>}
@@ -50,7 +50,7 @@ const SubmissionBibinfoForm = () => {
         <Field
           component={Datepicker}
           fullWidth
-          label={<FormattedMessage id="ui-ill-components.iso18626.pubInfo.PublicationDate" />}
+          label={<FormattedMessage id="ui-ill-components.iso18626.PublicationInfo.PublicationDate" />}
           name="submissionMetadata.PublicationInfo.PublicationDate"
           validateFields={[]}
         />
@@ -60,7 +60,7 @@ const SubmissionBibinfoForm = () => {
           component={TextField}
           fullWidth
           id="PlaceOfPublication"
-          label={<FormattedMessage id="ui-ill-components.iso18626.pubInfo.PlaceOfPublication" />}
+          label={<FormattedMessage id="ui-ill-components.iso18626.PublicationInfo.PlaceOfPublication" />}
           name="submissionMetadata.PublicationInfo.PlaceOfPublication"
           validateFields={[]}
         />

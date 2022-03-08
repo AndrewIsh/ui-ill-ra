@@ -33,7 +33,7 @@ const SubmissionStatus = () => {
   >
     {statuses.map((status) => (
       <FormattedMessage
-        id={status.name}
+        id={`ui-ill-ra.submission.status.${status.name.replace(/\s/g,'_')}`}
         key={status.id}
       >
         {(message) => <option value={status.id}>{message}</option>}

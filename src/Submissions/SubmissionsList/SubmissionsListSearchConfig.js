@@ -1,5 +1,4 @@
 const indexes = [
-    'id',
     'submissionMetadata.BibliographicInfo.Title',
     'submissionMetadata.BibliographicInfo.Author',
     'submissionMetadata.BibliographicInfo.TitleOfComponent',
@@ -12,7 +11,7 @@ export const searchableIndexes = [
         value: ''
     },
     ...indexes.map(index => ({
-        labelId: `ui-ill-ra.search.${index.replace(/\./g, '')}`,
+        labelId: `ui-ill-components.iso18626.${index.replace(/submissionMetadata\./g, '')}`,
         value: index
     }))
 ];

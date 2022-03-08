@@ -49,7 +49,7 @@ const BibField = ({ fieldName, onClick, component }) => {
     fullWidth
     onClick={onClick}
     id={fieldName}
-    label={<FormattedMessage id={`ui-ill-components.iso18626.bibInfo.${fieldName}`} />}
+    label={<FormattedMessage id={`ui-ill-components.iso18626.BibliographicInfo.${fieldName}`} />}
     name={`submissionMetadata.BibliographicInfo.${fieldName}`}
     validateFields={[]}
   />)
@@ -95,7 +95,7 @@ const SubmissionBibinfoForm = () => {
           open={pickerOpen}
           setOpen={setPickerOpen}
           fieldName={pickerField}
-          label={intl.formatMessage({ id: `ui-ill-components.iso18626.bibInfo.${pickerField}` })}
+          label={intl.formatMessage({ id: `ui-ill-components.iso18626.BibliographicInfo.${pickerField}` })}
           toUpdate={`submissionMetadata.BibliographicInfo.${pickerField}`}
         />
       )}

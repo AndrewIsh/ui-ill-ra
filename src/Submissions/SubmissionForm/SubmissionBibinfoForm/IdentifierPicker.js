@@ -75,7 +75,7 @@ const IdentifierPicker = ({
                 required
                 component={Select}
                 dataOptions={selectValues[codeField]}
-                label={<FormattedMessage id={`ui-ill-components.iso18626.bibInfo.${codeField}`} />}
+                label={<FormattedMessage id={`ui-ill-components.iso18626.BibliographicInfo.${codeField}`} />}
                 name={`${field}.${codeField}`}
               />
             </Col>
@@ -83,7 +83,7 @@ const IdentifierPicker = ({
               <Field
                 required
                 component={TextField}
-                label={<FormattedMessage id={`ui-ill-components.iso18626.bibInfo.${valueField}`} />}
+                label={<FormattedMessage id={`ui-ill-components.iso18626.BibliographicInfo.${valueField}`} />}
                 name={`${field}.${valueField}`}
               />
             </Col>
