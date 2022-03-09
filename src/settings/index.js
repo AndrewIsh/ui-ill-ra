@@ -1,32 +1,20 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
 import { Settings } from '@folio/stripes/smart-components';
-import GeneralSettings from './general-settings';
-import SomeFeatureSettings from './some-feature-settings';
+import { SubmissionStatuses }  from './SubmissionStatuses';
 
-/*
-  STRIPES-NEW-APP
-  Your app's settings pages are defined here.
-  The pages "general" and "some feature" are examples. Name them however you like.
-*/
-
-export default class IllSettings extends React.Component {
-  pages = [
+const IllSettings = props => {
+  const pages = [
     {
-      route: 'general',
-      label: <FormattedMessage id="ui-ill.settings.general" />,
-      component: GeneralSettings,
-    },
-    {
-      route: 'somefeature',
-      label: <FormattedMessage id="ui-ill.settings.some-feature" />,
-      component: SomeFeatureSettings,
-    },
+      route: 'submission-statuses',
+      label: <FormattedMessage id="ui-ill-ra.settings.submissionStatuses" />,
+      component: SubmissionStatuses,
+    }
   ];
 
-  render() {
-    return (
-      <Settings {...this.props} pages={this.pages} paneTitle="ui-ill" />
-    );
-  }
-}
+  return (
+    <Settings {...props} pages={pages} paneTitle={<FormattedMessage id="ui-ill-ra.meta.title" />} />
+  );
+};
+
+export default IllSettings;

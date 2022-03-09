@@ -53,5 +53,11 @@
 
   "save.error.genericError": "Unable to save",
 
-  "button.saveAndClose": "Save & close"
+  "button.saveAndClose": "Save & close",
+
+  "settings.submissionStatuses": "Submission statuses",
+  "settings.submissionStatuses.saveStatuses": "Save statuses",
+  "settings.submissionStatuses.statusName": "Status name",
+  "settings.submissionStatuses.addNewStatus": "Add new status"
+
 }

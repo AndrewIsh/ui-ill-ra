@@ -9,7 +9,7 @@ import { hot } from 'react-hot-loader';
 
 import { Submissions } from './Submissions';
 import { Requests } from './Requests';
-import Settings from './settings';
+import IllSettings from './settings';
 import {
   ROOT,
   SUBMISSIONS_ROUTE,
@@ -28,7 +28,7 @@ class Ill extends React.Component {
     const { showSettings } = this.props;
 
     if (showSettings) {
-      return <Settings {...this.props} />;
+      return <IllSettings {...this.props} />;
     }
     return (
       <Switch>
