@@ -9,6 +9,7 @@ const IllSettings = props => {
       route: 'submission-statuses',
       label: <FormattedMessage id="ui-ill-ra.settings.submissionStatuses" />,
       component: SubmissionStatuses,
+      perm: 'settings.ill-ra.manage.submission-statuses'
     }
   ];
 
