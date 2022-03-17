@@ -31,14 +31,7 @@ const SubmissionStatus = () => {
     validate={validateRequired}
     validateFields={[]}
   >
-    {statuses.map((status) => (
-      <FormattedMessage
-        id={`ui-ill-ra.submission.status.${status.name.replace(/\s/g,'_')}`}
-        key={status.id}
-      >
-        {(message) => <option value={status.id}>{message}</option>}
-      </FormattedMessage>
-    ))}
+    {statuses.map((status) => <option key={status.id} value={status.id}>{status.name}</option>)}
   </Field>);
 };
 

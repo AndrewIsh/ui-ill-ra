@@ -35,11 +35,6 @@
   "submission.summary.status": "Submission status",
   "submission.summary.user": "Submitted by",
 
-  "submission.status.Created": "Created",
-  "submission.status.Cancelled": "Cancelled",
-  "submission.status.Awaiting_update": "Awaiting update",
-  "submission.status.Cannot_be_fulfilled": "Cannot be fulfilled",
-
   "submission.metadata.location": "Submission location",
   "submission.identifier.add": "Add {identifierType}",
   "submission.identifier.selectCode": "Choose type",
