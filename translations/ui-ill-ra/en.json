@@ -54,10 +54,18 @@
   "save.error.genericError": "Unable to save",
 
   "button.saveAndClose": "Save & close",
+  "button.save": "Save",
 
+  "settings.general": "General",
   "settings.submissionStatuses": "Submission statuses",
   "settings.submissionStatuses.saveStatuses": "Save statuses",
   "settings.submissionStatuses.statusName": "Status name",
-  "settings.submissionStatuses.addNewStatus": "Add new status"
-
+  "settings.submissionStatuses.actions": "Actions",
+  "settings.submissionStatuses.submissionCount": "# of submissions",
+  "settings.submissionStatuses.addNewStatus": "Add new status",
+  "settings.submissionStatuses.labelSingular": "status",
+  "settings.submissionStatuses.objectLabel": "statuses",
+  "settings.selectRequestingAgencyIdType": "Select institution ID type",
+  "settings.requestingAgencyIdType": "Institution ID type",
+  "settings.requestingAgencyIdValue": "Institution ID"
 }

@@ -95,6 +95,12 @@
         "visible": true
       },
       {
+        "permissionName": "settings.ill-ra.manage.general",
+        "displayName": "Settings (ILL Requesting Agency): Manage general configuration",
+        "subPermissions": [],
+        "visible": true
+      },
+      {
         "permissionName": "settings.ill-ra.manage.submission-statuses",
         "displayName": "Settings (ILL Requesting Agency): Manage the list of submission statuses",
         "subPermissions": [
