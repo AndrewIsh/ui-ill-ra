@@ -1,3 +1,9 @@
 .summary {
   margin-bottom: 20px;
 }
+
+.requestActions {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}

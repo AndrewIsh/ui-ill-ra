@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 
 import {
   HandlerManager,
-  withStripes
+  withStripes,
 } from '@folio/stripes-core';
 
 import {
   Row,
-  Col,
+  Col
 } from '@folio/stripes/components';
 
 import {
@@ -31,8 +31,19 @@ const RequestSummary = ({ request, stripes, connectors }) => {
 
   return <>
     <Row>
-      <Col xs={12}>
+      <Col xs={8}>
         <h3>{getConnectorName(request.connectorId)}</h3>
+      </Col>
+      <Col xs={4} className={css.requestActions}>
+        <HandlerManager
+          event="ui-ill-ra-request-actions"
+          stripes={stripes}
+          data={{
+            event: 'ui-ill-ra-request-actions',
+            connector: { id: request.connectorId },
+            request
+          }}
+        />
       </Col>
     </Row>
     <Row>
